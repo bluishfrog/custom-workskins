@@ -1,0 +1,227 @@
+:root {
+  --primary-bg: #ffffff;
+  --primary-text: #000000;
+  --primary-border: #dcdcdc;
+  --primary-box-shadow: rgba(0, 0, 0, 0.12);
+  --accent-light: #f5f7fa;
+  --accent-dark: #333;
+}
+
+
+/* MAIL CONTAINER / WINDOW */
+
+.mail {
+  width: 100% -40px;
+  max-width: 1200px;
+  height: 500px;
+  margin: 20px;
+  background: var(--primary-bg);
+  border: 1px solid var(--primary-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px var(--primary-box-shadow);
+  position: relative;
+  padding-top: 30px;
+  overflow: hidden;
+}
+
+/* Top bar */
+.mail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: var(--accent-light);
+  border-bottom: 1px solid var(--primary-border);
+  display: flex;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  padding-left: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-dark);
+}
+
+/* Control buttons */
+.mail::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow:
+    -18px 0 0 #ffbd2e,
+    -36px 0 0 #28c840;
+}
+
+
+/* ADDRESS FIELDS WRAPPER */
+.address-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 13px;
+  color: var(--primary-text);
+  padding: 10px 12px;
+}
+
+/* EACH ROW (from / to / cc / bcc) */
+.address-fields > div {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* LABEL (optional if you add labels later) */
+.address-fields .from::before,
+.address-fields .to::before,
+.address-fields .cc::before,
+.address-fields .bcc::before {
+  content: attr(class);
+  display: inline-block;
+  width: 40px;            /* key part */
+  flex: 0 0 40px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  line-height: 22px;
+}
+
+/* everything after the label behaves like a block */
+.address-fields > div::after {
+  content: "";
+  flex-basis: 100%;
+  height: 0;
+}
+
+/* ACCOUNT PILLS */
+.account {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  background: var(--accent-light);
+  border: 1px solid var(--primary-border);
+  border-radius: 999px;
+
+  padding: 4px 10px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* NAME */
+.account .name {
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+/* EMAIL */
+.account .mail-address {
+  font-size: 12px;
+  color: #666;
+}
+
+/* FORMAT: add < > around email */
+.account .mail-address::before {
+  content: "<";
+}
+.account .mail-address::after {
+  content: ">";
+}
+
+.account:hover {
+  background: #e9ecef;
+}
+
+
+.meta-data {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 10px 12px;
+  border-top: 1px solid var(--primary-border);
+  border-bottom: 1px solid var(--primary-border);
+
+  background: #f3f6fb; /* stronger separation from white mail body */
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* SUBJECT */
+.subject-line {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-text);
+  max-width: 75%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* DATE */
+.date {
+  font-size: 12px;
+  font-style: italic;
+  font-variant-numeric: tabular-nums;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+
+.attachements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  padding: 10px 12px;
+
+}
+
+.attachements > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 10px;
+
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+  border: 1px solid var(--primary-border);
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #333;
+
+  cursor: default;
+  transition: all 0.15s ease;
+}
+
+.attachements > div:hover {
+  background: #eef3ff;
+  border-color: #c9d6ff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.mail-body {
+    margin: 15px;
+}
+
+.attachements > div::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M21.44 11.05l-9.19 9.19a5 5 0 01-7.07-7.07l9.19-9.19a3 3 0 114.24 4.24l-9.2 9.19a1 1 0 01-1.41-1.41l8.49-8.49'/%3E%3C/svg%3E");
+  opacity: 0.8;
+}
