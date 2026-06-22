@@ -1,0 +1,23 @@
+#workskin .news-article {
+  font-family: Georgia, "Times New Roman", serif;
+  max-width: 450px;
+  margin: auto;
+}
+
+#workskin .news-article .title {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+#workskin .news-article .byline {
+  font-size: 0.85em;
+  color: #c7c7c7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#workskin .news-article .interview {
+  padding-left: 15px;
+  border-left: 2px solid #c7c7c7;
+}
