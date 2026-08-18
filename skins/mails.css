@@ -1,50 +1,31 @@
-:root {
-  --primary-bg: #ffffff;
-  --primary-text: #000000;
-  --primary-border: #dcdcdc;
-  --primary-box-shadow: rgba(0, 0, 0, 0.12);
-  --accent-light: #f5f7fa;
-  --accent-dark: #333;
-}
-
-
-/* MAIL CONTAINER / WINDOW */
-
-.mail {
-  width: 100% -40px;
+#workskin .mail {
+  font-size: 80%;
+  width: 95%;
   max-width: 1200px;
-  height: 500px;
-  margin: 20px;
-  background: var(--primary-bg);
-  border: 1px solid var(--primary-border);
+  margin: 20px auto;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
   border-radius: 10px;
-  box-shadow: 0 8px 24px var(--primary-box-shadow);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   position: relative;
   padding-top: 30px;
   overflow: hidden;
 }
 
-/* Top bar */
-.mail::before {
+#workskin .mail::before {
+  font-size: inherit;
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 25px;
-  background: var(--accent-light);
-  border-bottom: 1px solid var(--primary-border);
-  display: flex;
-  align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  padding-left: 12px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--accent-dark);
+  background: #f5f7fa;
+  border-bottom: 1px solid #dcdcdc;
 }
 
-/* Control buttons */
-.mail::after {
+#workskin .mail::after {
+  font-size: inherit;
   content: "";
   position: absolute;
   top: 8px;
@@ -53,175 +34,167 @@
   height: 10px;
   border-radius: 50%;
   background: #ff5f57;
-  box-shadow:
-    -18px 0 0 #ffbd2e,
+  box-shadow: -18px 0 0 #ffbd2e,
     -36px 0 0 #28c840;
 }
 
-
-/* ADDRESS FIELDS WRAPPER */
-.address-fields {
+#workskin .address-fields {
+  font-size: inherit;
   display: flex;
   flex-direction: column;
-  gap: 6px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  font-size: 13px;
-  color: var(--primary-text);
+  color: #000000;
   padding: 10px 12px;
 }
 
-/* EACH ROW (from / to / cc / bcc) */
-.address-fields > div {
+#workskin .address-fields > div {
+  font-size: inherit;
   display: flex;
-  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 4px;
+  align-items: center;
+  margin-bottom: 6px;
 }
 
-/* LABEL (optional if you add labels later) */
-.address-fields .from::before,
-.address-fields .to::before,
-.address-fields .cc::before,
-.address-fields .bcc::before {
-  content: attr(class);
+#workskin .from::before {
+  font-size: inherit;
+  content: "FROM";
+  width: 60px;
   display: inline-block;
-  width: 40px;            /* key part */
-  flex: 0 0 40px;
-  text-transform: uppercase;
-  font-size: 11px;
   font-weight: 600;
   color: #888;
-  line-height: 22px;
 }
 
-/* everything after the label behaves like a block */
-.address-fields > div::after {
-  content: "";
-  flex-basis: 100%;
-  height: 0;
+#workskin .to::before {
+  font-size: inherit;
+  content: "TO";
+  width: 60px;
+  display: inline-block;
+  font-weight: 600;
+  color: #888;
 }
 
-/* ACCOUNT PILLS */
-.account {
+#workskin .cc::before {
+  font-size: inherit;
+  content: "CC";
+  width: 60px;
+  display: inline-block;
+  font-weight: 600;
+  color: #888;
+}
+
+#workskin .bcc::before {
+  font-size: inherit;
+  content: "BCC";
+  width: 60px;
+  display: inline-block;
+  font-weight: 600;
+  color: #888;
+}
+
+#workskin .account {
+  font-size: inherit;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-
-  background: var(--accent-light);
-  border: 1px solid var(--primary-border);
+  background: #f5f7fa;
+  border: 1px solid #dcdcdc;
   border-radius: 999px;
-
-  padding: 4px 10px;
-  line-height: 1;
+  padding: 0px 12px;
+  margin-right: 6px;
+  margin-bottom: 4px;
   white-space: nowrap;
+  line-height: 1%;
 }
 
-/* NAME */
-.account .name {
+#workskin .account .name {
+  font-size: inherit;
   font-weight: 600;
-  color: var(--primary-text);
+  color: #000000;
+  margin-right: 6px;
 }
 
-/* EMAIL */
-.account .mail-address {
-  font-size: 12px;
-  color: #666;
+#workskin .account .mail-address {
+  color: #666666;
 }
 
-/* FORMAT: add < > around email */
-.account .mail-address::before {
-  content: "<";
-}
-.account .mail-address::after {
-  content: ">";
+#workskin .mail-address {
+  font-family: inherit;
 }
 
-.account:hover {
+#workskin .account:hover {
   background: #e9ecef;
 }
 
-
-.meta-data {
+#workskin .meta-data {
+  font-size: initial;
   display: flex;
-
   justify-content: space-between;
-
-  padding: 10px 12px;
-  border-top: 1px solid var(--primary-border);
-  border-bottom: 1px solid var(--primary-border);
-
-  background: #f3f6fb; /* stronger separation from white mail body */
-
+  padding: 5px 15px;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  background: #f3f6fb;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  align-items: center;
+  line-height: 1%;
 }
 
-/* SUBJECT */
-.subject-line {
-  font-size: 16px;
+#workskin .subject-line {
+  font-size: 120%;
   font-weight: 600;
-  color: var(--primary-text);
+  color: #000000;
   max-width: 75%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* DATE */
-.date {
-  font-size: 12px;
+#workskin .date {
+  font-size: inherit;
   font-style: italic;
   font-variant-numeric: tabular-nums;
   padding: 3px 10px;
   white-space: nowrap;
 }
 
-
-.attachements {
+#workskin .attachements {
+  font-size: inherit;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-
   padding: 10px 12px;
-
 }
 
-.attachements > div {
+#workskin .attachements > div {
+  font-size: inherit;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-
-  padding: 6px 10px;
-
-  font-size: 12px;
+  padding: 0px 10px;
+  margin-right: 8px;
+  margin-bottom: 8px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-
-  border: 1px solid var(--primary-border);
+  border: 1px solid #dcdcdc;
   border-radius: 10px;
-
   background: #ffffff;
-
-  color: #333;
-
-  cursor: default;
+  color: #333333;
   transition: all 0.15s ease;
+  line-height: 0.5;
 }
 
-.attachements > div:hover {
+#workskin .attachements > div:hover {
+  font-size: inherit;
   background: #eef3ff;
   border-color: #c9d6ff;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.mail-body {
-    margin: 15px;
+#workskin .attachements > div::before {
+  font-size: inherit;
+  content: "📎";
+  margin-right: 3px;
 }
 
-.attachements > div::before {
-  content: "";
-  width: 14px;
-  height: 14px;
-  display: inline-block;
-  background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M21.44 11.05l-9.19 9.19a5 5 0 01-7.07-7.07l9.19-9.19a3 3 0 114.24 4.24l-9.2 9.19a1 1 0 01-1.41-1.41l8.49-8.49'/%3E%3C/svg%3E");
-  opacity: 0.8;
+#workskin .mail-body {
+  margin: 15px;
+  font-size: initial;
+  color: #000000
 }
+
