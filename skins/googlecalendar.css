@@ -1,0 +1,965 @@
+.ao3-calendar {
+  /*
+   * Google Calendar / Material 3 inspired palette.
+   *
+   * The very pale background is intentional:
+   * current Google Calendar uses a lightly tinted
+   * surface rather than a plain white card.
+   */
+
+  --calendar-surface: #f8f7ff;
+  --calendar-surface-top: #f0effa;
+
+  --calendar-line: #dedde7;
+  --calendar-line-strong: #d2d1dc;
+
+  --calendar-text: #29272f;
+  --calendar-muted: #6d6a75;
+  --calendar-icon: #4e4b56;
+
+  --calendar-accent: #4f64c4;
+  --calendar-accent-soft: #dce3ff;
+
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+
+  margin: 2em auto;
+
+  box-sizing: border-box;
+
+    border-radius: 3px;
+    border: 1px solid var(--calendar-line-strong);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  color: var(--calendar-text);
+
+  background: var(--calendar-surface);
+
+  overflow: visible;
+}
+
+/* =========================================================
+   TAGGED PERSON
+   ========================================================= */
+
+.ao3-calendar-tag {
+  color: #4f64c4;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   TOP APP BAR
+   ========================================================= */
+
+.ao3-calendar-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 58px;
+
+  box-sizing: border-box;
+
+  padding: 8px 10px 8px 12px;
+
+  background: var(--calendar-surface-top);
+
+  border: 0;
+
+  text-align: left;
+}
+
+
+/*
+ * Left side:
+ * hamburger + month
+ */
+
+.ao3-calendar-header-left {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+/* Hamburger */
+
+.ao3-calendar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  margin-right: 3px;
+
+  color: var(--calendar-icon);
+
+  font-size: 22px;
+  line-height: 1;
+
+  font-weight: 300;
+}
+
+
+/* Month name */
+
+.ao3-calendar-month {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  font-size: 1.08em;
+  line-height: 1;
+
+  font-weight: 500;
+
+  color: var(--calendar-text);
+
+  white-space: nowrap;
+}
+
+
+/* Small downward arrow */
+
+.ao3-calendar-month-arrow {
+  display: inline-block;
+
+  margin-left: 5px;
+
+  width: 0;
+  height: 0;
+
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+
+  opacity: 0.75;
+}
+
+
+/*
+ * Right-side toolbar
+ */
+
+.ao3-calendar-header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 2px;
+}
+
+
+/* Generic icon button */
+
+.ao3-calendar-action {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  box-sizing: border-box;
+
+  color: var(--calendar-icon);
+
+  font-size: 18px;
+  line-height: 1;
+
+  border-radius: 50%;
+}
+
+
+/*
+ * Search icon
+ */
+
+.ao3-calendar-search {
+  width: 17px;
+  height: 17px;
+
+  box-sizing: border-box;
+
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  
+}
+
+.ao3-calendar-search::after {
+  content: "";
+
+  position: absolute;
+
+  width: 7px;
+  height: 2px;
+
+  right: 7px;
+  bottom: 8px;
+
+  background: currentColor;
+
+  transform: rotate(45deg);
+
+  border-radius: 2px;
+}
+
+
+/*
+ * Today / date icon
+ */
+
+.ao3-calendar-today-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  box-sizing: border-box;
+
+  border: 2px solid currentColor;
+  border-radius: 2px;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/*
+ * More icon
+ */
+
+.ao3-calendar-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+}
+
+.ao3-calendar-more span {
+  display: block;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+/* =========================
+   DAY HEADER
+   ========================= */
+
+.ao3-calendar-day-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 66px;
+  box-sizing: border-box;
+  background: var(--calendar-surface);
+  border-bottom: 1px solid var(--calendar-line);
+}
+
+.ao3-calendar-day-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  color: #9a98a1;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.ao3-calendar-weekday {
+  margin: 0 0 4px;
+  font-size: 0.64em;
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #8f8c96;
+}
+
+.ao3-calendar-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  font-size: 1.08em;
+  line-height: 1;
+  font-weight: 400;
+  border-radius: 50%;
+  color: #77747d;
+}
+
+/* Current day */
+
+.ao3-calendar-today {
+  color: var(--calendar-accent);
+}
+
+.ao3-calendar-today .ao3-calendar-weekday {
+  color: var(--calendar-accent);
+  font-weight: 600;
+}
+
+.ao3-calendar-today .ao3-calendar-date {
+  background: var(--calendar-accent);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* =========================================================
+   CALENDAR BODY
+   ========================================================= */
+
+.ao3-calendar-body {
+  position: relative;
+
+  height: 1080px;
+
+  box-sizing: border-box;
+
+  background: var(--calendar-surface);
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   TIME COLUMN
+   ========================================================= */
+
+.ao3-calendar-times {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 48px;
+
+  box-sizing: border-box;
+
+  background: var(--calendar-surface);
+
+  border-right: 1px solid var(--calendar-line);
+
+  z-index: 3;
+}
+
+
+.ao3-calendar-time {
+  position: absolute;
+
+  right: 7px;
+
+  transform: translateY(-50%);
+
+  font-size: 0.66em;
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  color: var(--calendar-muted);
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TIMELINE GRID
+   ========================================================= */
+
+.ao3-calendar-grid {
+  position: absolute;
+
+  top: 0;
+  left: 48px;
+  right: 0;
+  bottom: 0;
+
+  pointer-events: none;
+
+  /*
+   * Every 60px = one hour.
+   *
+   * The first line is subtle.
+   * Every hour receives a slightly stronger line.
+   */
+
+  background-image:
+    repeating-linear-gradient(to bottom,
+
+      transparent 0,
+      transparent 59px,
+
+      var(--calendar-line-strong) 59px,
+      var(--calendar-line-strong) 60px);
+
+  z-index: 1;
+}
+
+
+/*
+ * Very subtle half-hour lines.
+ *
+ * This creates a second layer without making
+ * the calendar look like graph paper.
+ */
+
+.ao3-calendar-grid::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    repeating-linear-gradient(to bottom,
+
+      transparent 0,
+      transparent 29px,
+
+      var(--calendar-line) 29px,
+      var(--calendar-line) 30px,
+
+      transparent 30px,
+      transparent 59px,
+
+      transparent 59px,
+      transparent 60px);
+
+  opacity: 0.38;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   EVENT AREA
+   ========================================================= */
+
+.ao3-calendar-events {
+  position: absolute;
+
+  top: 0;
+  left: 48px;
+  right: 4px;
+  bottom: 0;
+
+  overflow: visible;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.ao3-event {
+  position: absolute;
+
+  box-sizing: border-box;
+
+  min-width: 0;
+
+  border: 0;
+
+  border-radius: 5px;
+
+  font-size: 0.76em;
+
+  line-height: 1.25;
+
+  overflow: visible;
+
+  box-shadow: none;
+}
+
+
+/*
+ * Google-style event blocks have a small
+ * inset from the grid rather than touching
+ * the timeline lines.
+ */
+
+.ao3-event>summary {
+  display: block;
+
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 5px 7px;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  overflow: hidden;
+
+  color: inherit;
+}
+
+
+.ao3-event>summary::-webkit-details-marker {
+  display: none;
+}
+
+.ao3-event>summary::marker {
+  display: none;
+}
+
+
+/* =========================================================
+   EVENT TYPOGRAPHY
+   ========================================================= */
+
+.ao3-event-title {
+  margin: 0;
+
+  font-size: 1em;
+
+  line-height: 1.25;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+.ao3-event-time {
+  margin-top: 2px;
+
+  font-size: 0.84em;
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  opacity: 0.92;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   EVENT COLORS
+   ========================================================= */
+
+/*
+ * These are deliberately solid rather than pastel.
+ * That is much closer to the actual Calendar
+ * day-view event treatment.
+ */
+
+.ao3-event-blue {
+  background: #d9e8ff;
+
+  border-left: 4px solid #4285f4;
+
+  color: #174ea6;
+}
+
+.ao3-event-green {
+  background: #d9f0e2;
+  border-left: 4px solid #34a853;
+  color: #176b36;
+}
+
+.ao3-event-red {
+  background: #fce1e1;
+  border-left: 4px solid #ea4335;
+  color: #a50e0e;
+}
+
+.ao3-event-yellow {
+  background: #fff0c7;
+  border-left: 4px solid #fbbc04;
+  color: #765500;
+}
+
+.ao3-event-purple {
+  background: #eadcf8;
+  border-left: 4px solid #8e63ce;
+  color: #5b2a86;
+}
+
+.ao3-event-pink {
+  background: #f7dce5;
+  border-left: 4px solid #d9577a;
+  color: #8f2947;
+}
+
+.ao3-event-teal {
+  background: #b9dfe2;
+  border-left: 4px solid #0f8d96;
+  color: #006D75;
+}
+
+
+/* =========================================================
+   EVENT WIDTHS
+   ========================================================= */
+
+.ao3-event-full {
+  left: 4px;
+  width: calc(100% - 8px);
+}
+
+.ao3-event-col-1-of-2 {
+  left: 4px;
+  width: calc(50% - 6px);
+}
+
+.ao3-event-col-2-of-2 {
+  left: calc(50% + 2px);
+  width: calc(50% - 6px);
+}
+
+.ao3-event-col-1-of-3 {
+  left: 4px;
+  width: calc(33.333% - 5px);
+}
+
+.ao3-event-col-2-of-3 {
+  left: 33.333%;
+  width: calc(33.333% - 5px);
+}
+
+.ao3-event-col-3-of-3 {
+  left: 66.666%;
+  width: calc(33.333% - 7px);
+}
+
+
+/* =========================================================
+   AUTOMATIC POPOVER DIRECTION
+   ========================================================= */
+
+.ao3-event-col-1-of-2 .ao3-event-details,
+.ao3-event-col-1-of-3 .ao3-event-details {
+  left: 0;
+  right: auto;
+}
+
+.ao3-event-col-2-of-2 .ao3-event-details,
+.ao3-event-col-3-of-3 .ao3-event-details {
+  left: auto;
+  right: 0;
+}
+
+
+/* =========================================================
+   EVENT HOVER / OPEN
+   ========================================================= */
+
+.ao3-event > summary:hover {
+  filter: brightness(0.96);
+}
+
+.ao3-event[open] {
+  z-index: 100;
+}
+
+.ao3-event[open] > summary {
+  filter: brightness(0.94);
+}
+
+
+/* =========================================================
+   EVENT DETAIL POPUP
+   ========================================================= */
+
+.ao3-event-details {
+  position: absolute;
+
+  top: calc(100% + 6px);
+  left: 0;
+
+  width: 285px;
+
+  box-sizing: border-box;
+
+  padding: 16px 17px 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #dad8df;
+  border-radius: 10px;
+
+  color: #37343c;
+
+  box-shadow:
+    0 2px 4px rgba(40, 38, 48, 0.12),
+    0 5px 14px rgba(40, 38, 48, 0.14);
+
+  z-index: 200;
+}
+
+
+/* =========================================================
+   POPUP DIRECTION
+   ========================================================= */
+
+/*
+ * LEFT-SIDE EVENTS
+ *
+ * Popup opens toward the right.
+ */
+
+.ao3-event-col-1-of-2 .ao3-event-details,
+.ao3-event-col-1-of-3 .ao3-event-details {
+  left: 0;
+  right: auto;
+}
+
+
+/*
+ * RIGHT-SIDE EVENTS
+ *
+ * Popup opens toward the left.
+ */
+
+.ao3-event-col-2-of-2 .ao3-event-details,
+.ao3-event-col-3-of-3 .ao3-event-details {
+  left: auto;
+  right: 0;
+}
+
+
+/*
+ * FULL-WIDTH EVENTS
+ *
+ * These start from the left because there is
+ * no need to flip them horizontally.
+ */
+
+.ao3-event-full .ao3-event-details {
+  left: 0;
+  right: auto;
+}
+
+/* =========================================================
+   POPOVER CONTENT
+   ========================================================= */
+
+.ao3-event-details h3 {
+  margin: 0 0 7px;
+
+  font-size: 1.08em;
+
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  color: #202124;
+}
+
+
+.ao3-event-details-meta {
+  margin: 0 0 13px;
+
+  font-size: 0.82em;
+
+  line-height: 1.45;
+
+  color: #69666f;
+}
+
+
+.ao3-event-details p {
+  margin: 0 0 10px;
+
+  font-size: 0.88em;
+
+  line-height: 1.5;
+
+  color: #45424b;
+}
+
+
+/*
+ * Small colored calendar indicator
+ * if used inside the popup.
+ */
+
+.ao3-event-calendar-name {
+  display: flex;
+  align-items: center;
+
+  margin-top: 10px;
+
+  font-size: 0.78em;
+
+  color: #77737c;
+}
+
+
+.ao3-event-calendar-dot {
+  width: 8px;
+  height: 8px;
+
+  margin-right: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+
+/* =========================================================
+   CURRENT TIME INDICATOR
+   ========================================================= */
+
+.ao3-calendar-now {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background: #ea4335;
+
+  z-index: 80;
+
+  pointer-events: none;
+}
+
+
+.ao3-calendar-now::before {
+  content: "";
+
+  position: absolute;
+
+  left: -3px;
+  top: -3px;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #ea4335;
+}
+
+
+/* =========================================================
+   FLOATING ADD BUTTON
+   ========================================================= */
+
+/*
+ * Decorative Google-style FAB.
+ *
+ * This is not functional yet; it is included
+ * purely to make the visual structure closer
+ * to the mobile app.
+ */
+
+.ao3-calendar-fab {
+  position: absolute;
+
+  right: 14px;
+  bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 16px;
+
+  background: var(--calendar-accent);
+
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  box-shadow:
+    0 2px 5px rgba(40, 38, 48, 0.18);
+
+  z-index: 150;
+}
+
+
+/* =========================================================
+   CALENDAR FOOTER / LEGEND
+   ========================================================= */
+
+.ao3-calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 8px 12px;
+
+  padding: 10px 14px;
+
+  background: var(--calendar-surface-top);
+
+  border-top: 1px solid var(--calendar-line);
+
+  font-size: 0.7em;
+
+  color: var(--calendar-muted);
+}
+
+
+.ao3-calendar-legend-item {
+  display: flex;
+  align-items: center;
+}
+
+
+.ao3-calendar-legend-dot {
+  width: 8px;
+  height: 8px;
+
+  margin-right: 5px;
+
+  border-radius: 50%;
+}

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendar Test</title>
+
+    <link rel="stylesheet" href="skins/regular_ao3.css">
+    <link rel="stylesheet" href="skins/blu_ao3.css">
+    <link rel="stylesheet" href="skins/googlecalendar.css">
+</head>
+
+<body>
+
+    <div id="workskin">
+
+        <!-- for AO3 copy this level -->
+
+        <div class="ao3-calendar">
+
+            <!-- =========================
+       TOP APP BAR
+       ========================= -->
+
+            <div class="ao3-calendar-header">
+
+                <div class="ao3-calendar-header-left">
+
+                    <div class="ao3-calendar-menu" aria-hidden="true">
+                        ☰
+                    </div>
+
+                    <div class="ao3-calendar-month">
+                        September
+                        <span class="ao3-calendar-month-arrow"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="ao3-calendar-header-actions">
+
+                    <!-- Search -->
+                    <div class="ao3-calendar-action" aria-hidden="true">
+                        <span class="ao3-calendar-search"></span>
+                    </div>
+
+                    <!-- More -->
+                    <div class="ao3-calendar-action" aria-hidden="true">
+                        <span class="ao3-calendar-more">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- =========================
+     DAY HEADER
+     ========================= -->
+
+            <div class="ao3-calendar-day-header">
+
+                <div class="ao3-calendar-day-marker">
+                    <div class="ao3-calendar-weekday">Sun</div>
+                    <div class="ao3-calendar-date">20</div>
+                </div>
+
+                <div class="ao3-calendar-day-marker ao3-calendar-today">
+                    <div class="ao3-calendar-weekday">Mon</div>
+                    <div class="ao3-calendar-date">21</div>
+                </div>
+
+                <div class="ao3-calendar-day-marker">
+                    <div class="ao3-calendar-weekday">Tue</div>
+                    <div class="ao3-calendar-date">22</div>
+                </div>
+
+                <div class="ao3-calendar-day-marker">
+                    <div class="ao3-calendar-weekday">Wed</div>
+                    <div class="ao3-calendar-date">23</div>
+                </div>
+
+                <div class="ao3-calendar-day-marker">
+                    <div class="ao3-calendar-weekday">Thu</div>
+                    <div class="ao3-calendar-date">24</div>
+                </div>
+
+                <div class="ao3-calendar-day-marker">
+                    <div class="ao3-calendar-weekday">Fri</div>
+                    <div class="ao3-calendar-date">25</div>
+                </div>
+
+                <div class="ao3-calendar-day-marker">
+                    <div class="ao3-calendar-weekday">Sat</div>
+                    <div class="ao3-calendar-date">26</div>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+       CALENDAR BODY
+       ========================= -->
+
+            <div class="ao3-calendar-body">
+
+
+                <!-- Timeline grid -->
+
+                <div class="ao3-calendar-grid"></div>
+
+
+                <!-- Time labels -->
+
+                <div class="ao3-calendar-times">
+
+
+                    <div class="ao3-calendar-time" style="top: 0px;">
+
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 60px;">
+                        7 AM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 120px;">
+                        8 AM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 180px;">
+                        9 AM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 240px;">
+                        10 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 300px;">
+                        11 AM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 360px;">
+                        12 AM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 420px;">
+                        1 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 480px;">
+                        2 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 540px;">
+                        3 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 600px;">
+                        4 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 660px;">
+                        5 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 720px;">
+                        6 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 780px;">
+                        7 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 840px;">
+                        8 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 900px;">
+                        9 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 960px;">
+                        10 PM
+                    </div>
+
+                    <div class="ao3-calendar-time" style="top: 1020px;">
+                        11 PM
+                    </div>
+
+                </div>
+
+
+                <!-- EVENTS -->
+
+                <div class="ao3-calendar-events">
+
+
+                    <!-- MEETING WITH GRIER -->
+
+                    <details class="ao3-event ao3-event-teal ao3-event-col-1-of-2" style="top: 60px; height: 90px;">
+
+                        <summary>
+
+                            <div class="ao3-event-title">
+                                Meeting with Grier
+                            </div>
+
+                            <div class="ao3-event-time">
+                                7:00 AM – 10:30 AM
+                            </div>
+
+                        </summary>
+
+
+                        <div class="ao3-event-details">
+
+                            <h3>
+                                Meeting with Grier
+                            </h3>
+
+                            <div class="ao3-event-details-meta">
+                                Monday, September 21 · 7:00 AM – 10:30 AM
+                            </div>
+
+                            <p>
+                                Finalize contract.
+                            </p>
+                            <p>
+                                <span class="ao3-calendar-tag">@Mack</span> stop moving this to our shared calender, you do not need to be there for this.
+                            </p>
+                            <p>
+                                <span class="ao3-calendar-tag">@Will</span> fuck off.
+                            </p>
+
+                            <div class="ao3-event-calendar-name">
+                                <span class="ao3-event-calendar-dot" style="color:#0f8d96;"></span>
+
+                                Work
+                            </div>
+
+                        </div>
+
+                    </details>
+
+
+                    <!--
+        COFFEE WITH JAMIE
+        10:00 AM – 12:00 PM
+        Green calendar
+        Overlaps Meeting with Alex
+      -->
+
+                    <details class="ao3-event ao3-event-green ao3-event-col-2-of-2" style="top: 60px; height: 90px;">
+
+                        <summary>
+
+                            <div class="ao3-event-title">
+                                Go do something else Mack
+                            </div>
+
+                            <div class="ao3-event-time">
+                                07:00 AM – 10:30 PM
+                            </div>
+
+                        </summary>
+
+
+                        <div class="ao3-event-details">
+
+                            <h3>
+                                Go do something else Mack
+                            </h3>
+
+                            <div class="ao3-event-details-meta">
+                                Monday, September 21 · 09:00 AM – 10:30 PM
+                            </div>
+
+                            <p>
+                                <span class="ao3-calendar-tag">@Mack</span> You could go get coffee with Delly. You like Delly!
+                            </p>
+
+                            <p>
+                                <span class="ao3-calendar-tag">@Will</span>: I like you better.
+                            </p>
+
+                            <p>
+                                <span class="ao3-calendar-tag">@Mack</span> You're sweet but you still can't come to my meeting.
+                            </p>
+
+                            <div class="ao3-event-calendar-name">
+                                <span class="ao3-event-calendar-dot" style="color:#34a853;"></span>
+
+                                Mack
+                            </div>
+
+                        </div>
+
+                    </details>
+
+
+
+                </div>
+
+
+                <!-- =========================
+         CURRENT TIME
+         =========================
+
+         Remove this if you don't want it.
+
+         8:30 AM = 30px
+         9:00 AM = 60px
+         10:00 AM = 120px
+         etc.
+
+    -->
+
+                <div class="ao3-calendar-now" style="top: 30px;"></div>
+
+
+                <!-- =========================
+         FLOATING ACTION BUTTON
+         ========================= -->
+
+                <div class="ao3-calendar-fab" aria-hidden="true">
+                    +
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+       CALENDAR LEGEND
+       ========================= -->
+
+            <div class="ao3-calendar-legend">
+
+                <div class="ao3-calendar-legend-item">
+                    <span class="ao3-calendar-legend-dot" style="background:#0f8d96;"></span>
+                    Work
+                </div>
+
+                <div class="ao3-calendar-legend-item">
+                    <span class="ao3-calendar-legend-dot" style="background:#d9577a;"></span>
+                    Personal
+                </div>
+
+                <div class="ao3-calendar-legend-item">
+                    <span class="ao3-calendar-legend-dot" style="background:#34a853;"></span>
+                    Mack
+                </div>
+
+                <div class="ao3-calendar-legend-item">
+                    <span class="ao3-calendar-legend-dot" style="background:#4285f4;"></span>
+                    Will
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
