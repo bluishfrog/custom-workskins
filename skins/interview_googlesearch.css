@@ -1,0 +1,517 @@
+/* =========================================================
+   WIRED AUTOCOMPLETE INTERVIEW
+   AO3 WORKSKIN
+   MATCHES .google-results GOOGLE SEARCH UI
+   ========================================================= */
+
+
+/* =========================================================
+   OUTER CONTAINER
+   ========================================================= */
+
+#workskin .wired-interview {
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+
+  margin: 2em auto;
+
+  box-sizing: border-box;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.875em;
+  line-height: 1.5;
+
+  color: #202124;
+}
+
+
+/* =========================================================
+   THE BOARD
+   ========================================================= */
+
+#workskin .wired-board {
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #d2d1dc;
+  border-radius: 10px;
+
+  padding: 1em;
+
+  /*
+     Same basic visual language as .google-results,
+     but with a slightly more physical-paper feeling.
+  */
+
+  box-shadow:
+    0 1px 5px rgba(32, 33, 36, 0.12);
+}
+
+
+/*
+   Very subtle inner board edge.
+
+   This replaces the stronger "foam board" effect
+   from the previous version.
+*/
+
+#workskin .wired-board:before {
+  content: "";
+
+  position: absolute;
+
+  inset: 5px;
+
+  border: 1px solid #f2f2f2;
+
+  border-radius: 7px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GOOGLE-STYLE SEARCH BAR
+   ========================================================= */
+
+#workskin .wired-search {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  min-height: 42px;
+
+  box-sizing: border-box;
+
+  margin-bottom: 1em;
+  padding: 0.45em 0.85em;
+
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+
+  background: #fff;
+
+  box-shadow:
+    0 1px 4px rgba(32, 33, 36, 0.14);
+}
+
+
+/* =========================================================
+   GOOGLE LOGO
+   ========================================================= */
+
+#workskin .wired-google {
+  flex: 0 0 auto;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 1.15em;
+  font-weight: 500;
+
+  letter-spacing: -1px;
+
+  margin-right: 0.7em;
+}
+
+
+/* Google colours */
+
+#workskin .wired-google-blue {
+  color: #4285f4;
+}
+
+#workskin .wired-google-red {
+  color: #ea4335;
+}
+
+#workskin .wired-google-yellow {
+  color: #fbbc05;
+}
+
+#workskin .wired-google-green {
+  color: #34a853;
+}
+
+
+/* =========================================================
+   SEARCH TERM
+   ========================================================= */
+
+#workskin .wired-search-term {
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  color: #202124;
+
+  font-size: 0.95em;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   SEARCH ICON
+   ========================================================= */
+
+#workskin .wired-search-icon {
+  flex: 0 0 auto;
+
+  color: #4285f4;
+
+  font-size: 1.15em;
+
+  margin-left: 0.5em;
+}
+
+
+/* =========================================================
+   AUTOCOMPLETE RESULTS
+   ========================================================= */
+
+#workskin .wired-results {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dfe1e5;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   INDIVIDUAL QUESTION
+   ========================================================= */
+
+#workskin .wired-question {
+  border-bottom: 1px solid #ebebeb;
+  height: 3.5em;
+}
+
+
+/* No line after final question */
+
+#workskin .wired-question:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   CLICKABLE QUESTION
+   ========================================================= */
+
+#workskin .wired-question summary {
+  display: block;
+
+  list-style: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  padding: 0.9em 1em;
+
+  background: #fff;
+
+  color: #202124;
+
+  font-size: 1em;
+
+  line-height: 1.5;
+
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+/* Remove browser disclosure triangle */
+
+#workskin .wired-question summary::-webkit-details-marker {
+  display: none;
+}
+
+#workskin .wired-question summary::marker {
+  display: none;
+}
+
+
+/* Hover */
+
+#workskin .wired-question summary:hover {
+  background: #f8f9fa;
+}
+
+
+/* =========================================================
+   RIPPED PAPER TAPE
+   ========================================================= */
+
+#workskin .wired-tape {
+  position: relative;
+
+  display: inline-block;
+
+  /*
+     The hidden word still determines
+     the natural width of the tape.
+  */
+
+  color: transparent;
+
+  text-shadow: none;
+
+  /*
+     Slightly warm paper.
+  */
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #f8f8f6 48%,
+      #ffffff 100%
+    );
+
+  padding: 0.22em 1em;
+
+  min-width: 5.5em;
+
+  box-sizing: border-box;
+
+  /*
+     Very subtle physical paper edge.
+  */
+
+  border-top: 1px solid #e5e3df;
+  border-bottom: 1px solid #d8d6d2;
+
+  border-left: 1px solid #efeeeb;
+  border-right: 1px solid #efeeeb;
+
+  /*
+     Physical shadow.
+
+     Kept subtle so it still belongs
+     to the Google aesthetic.
+  */
+
+  box-shadow:
+    1px 2px 2px rgba(0, 0, 0, 0.08),
+    2px 3px 4px rgba(0, 0, 0, 0.04);
+
+  /*
+     Slightly crooked placement.
+  */
+
+  transform: rotate(-0.7deg);
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   TAPE SIZES
+   ========================================================= */
+
+#workskin .wired-tape-short {
+  min-width: 5.5em;
+}
+
+#workskin .wired-tape-medium {
+  min-width: 8em;
+}
+
+#workskin .wired-tape-long {
+  min-width: 12em;
+}
+
+
+/* =========================================================
+   TORN LEFT EDGE
+   ========================================================= */
+
+#workskin .wired-tape:before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: -4px;
+
+  width: 6px;
+  height: 102%;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0 35%,
+      #f8f8f6 36% 65%,
+      transparent 66%
+    );
+
+  background-size: 6px 6px;
+
+  background-repeat: repeat-y;
+
+  filter:
+    drop-shadow(
+      -1px 1px 1px rgba(0, 0, 0, 0.06)
+    );
+
+  /*
+     Do not interfere with <summary> clicks.
+  */
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TORN RIGHT EDGE
+   ========================================================= */
+
+#workskin .wired-tape:after {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  right: -4px;
+
+  width: 6px;
+  height: 102%;
+
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0 35%,
+      #f8f8f6 36% 65%,
+      transparent 66%
+    );
+
+  background-size: 6px 6px;
+
+  background-repeat: repeat-y;
+
+  filter:
+    drop-shadow(
+      1px 1px 1px rgba(0, 0, 0, 0.06)
+    );
+
+  /*
+     Do not interfere with <summary> clicks.
+  */
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FULL QUESTION AFTER REVEAL
+   ========================================================= */
+
+#workskin .wired-full-question {
+  box-sizing: border-box;
+
+  padding: 0.9em 1em 1em;
+
+  background: #fff;
+
+  color: #202124;
+
+  font-size: 1em;
+
+  line-height: 1.5;
+
+  font-weight: 500;
+
+  border-top: 1px solid #f0f0f0;
+}
+
+
+/*
+   When <details> is open,
+   remove the taped-up question.
+*/
+
+#workskin .wired-question[open] summary {
+  display: none;
+}
+
+
+/* =========================================================
+   OPTIONAL ANSWER
+   ========================================================= */
+
+#workskin .wired-answer {
+  margin-top: 1em;
+
+  padding: 1em;
+
+  background: #f8f9fa;
+
+  border-left: 3px solid #4285f4;
+
+  font-size: 0.95em;
+
+  line-height: 1.5;
+}
+
+
+#workskin .wired-answer-label {
+  display: block;
+
+  margin-bottom: 0.45em;
+
+  color: #5f6368;
+
+  font-size: 0.75em;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#workskin .wired-footer {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 0.8em;
+
+  color: #9aa0a6;
+
+  font-size: 0.7em;
+
+  letter-spacing: 1px;
+
+  text-align: right;
+
+  text-transform: uppercase;
+}
+
