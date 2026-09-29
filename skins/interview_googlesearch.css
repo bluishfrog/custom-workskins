@@ -66,13 +66,14 @@
 
   position: absolute;
 
-  inset: 5px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
 
   border: 1px solid #f2f2f2;
 
   border-radius: 7px;
-
-  pointer-events: none;
 }
 
 
@@ -154,7 +155,7 @@
 
   color: #202124;
 
-  font-size: 0.95em;
+  font-size: 1em;
 
   word-break: break-word;
 }
@@ -202,8 +203,13 @@
    ========================================================= */
 
 #workskin .wired-question {
-  border-bottom: 1px solid #ebebeb;
+  position: relative;
+
   height: 3.5em;
+
+  border-bottom: 1px solid #ebebeb;
+
+  overflow: hidden;
 }
 
 
@@ -219,13 +225,18 @@
    ========================================================= */
 
 #workskin .wired-question summary {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
   display: block;
 
-  list-style: none;
-
-  cursor: pointer;
-
   box-sizing: border-box;
+
+  margin: 0;
 
   padding: 0.9em 1em;
 
@@ -233,9 +244,10 @@
 
   color: #202124;
 
-  font-size: 1em;
-
+  font-size: 1.08em;
   line-height: 1.5;
+
+  cursor: pointer;
 
   transition:
     background-color 0.15s ease,
@@ -261,6 +273,8 @@
 }
 
 
+
+
 /* =========================================================
    RIPPED PAPER TAPE
    ========================================================= */
@@ -269,6 +283,10 @@
   position: relative;
 
   display: inline-block;
+
+  vertical-align: middle;
+
+  line-height: 1;
 
   /*
      The hidden word still determines
@@ -283,13 +301,7 @@
      Slightly warm paper.
   */
 
-  background:
-    linear-gradient(
-      90deg,
-      #ffffff 0%,
-      #f8f8f6 48%,
-      #ffffff 100%
-    );
+  background: #f8f8f6;
 
   padding: 0.22em 1em;
 
@@ -345,152 +357,49 @@
 }
 
 
-/* =========================================================
-   TORN LEFT EDGE
-   ========================================================= */
-
-#workskin .wired-tape:before {
-  content: "";
-
-  position: absolute;
-
-  top: -1px;
-  left: -4px;
-
-  width: 6px;
-  height: 102%;
-
-  background:
-    linear-gradient(
-      135deg,
-      transparent 0 35%,
-      #f8f8f6 36% 65%,
-      transparent 66%
-    );
-
-  background-size: 6px 6px;
-
-  background-repeat: repeat-y;
-
-  filter:
-    drop-shadow(
-      -1px 1px 1px rgba(0, 0, 0, 0.06)
-    );
-
-  /*
-     Do not interfere with <summary> clicks.
-  */
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   TORN RIGHT EDGE
-   ========================================================= */
-
-#workskin .wired-tape:after {
-  content: "";
-
-  position: absolute;
-
-  top: -1px;
-  right: -4px;
-
-  width: 6px;
-  height: 102%;
-
-  background:
-    linear-gradient(
-      45deg,
-      transparent 0 35%,
-      #f8f8f6 36% 65%,
-      transparent 66%
-    );
-
-  background-size: 6px 6px;
-
-  background-repeat: repeat-y;
-
-  filter:
-    drop-shadow(
-      1px 1px 1px rgba(0, 0, 0, 0.06)
-    );
-
-  /*
-     Do not interfere with <summary> clicks.
-  */
-
-  pointer-events: none;
-}
-
 
 /* =========================================================
    FULL QUESTION AFTER REVEAL
    ========================================================= */
 
 #workskin .wired-full-question {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
   box-sizing: border-box;
 
-  padding: 0.9em 1em 1em;
+  margin: 0;
+  padding: 0.9em 1em;
 
   background: #fff;
 
   color: #202124;
 
-  font-size: 1em;
-
+  font-size: 1.08em;
   line-height: 1.5;
 
   font-weight: 500;
 
-  border-top: 1px solid #f0f0f0;
-}
+  border: none;
 
-
-/*
-   When <details> is open,
-   remove the taped-up question.
-*/
-
-#workskin .wired-question[open] summary {
-  display: none;
+  visibility: hidden;
 }
 
 
 /* =========================================================
-   OPTIONAL ANSWER
+   OPEN STATE
    ========================================================= */
 
-#workskin .wired-answer {
-  margin-top: 1em;
-
-  padding: 1em;
-
-  background: #f8f9fa;
-
-  border-left: 3px solid #4285f4;
-
-  font-size: 0.95em;
-
-  line-height: 1.5;
+#workskin .wired-question[open] summary {
+  visibility: hidden;
 }
 
-
-#workskin .wired-answer-label {
-  display: block;
-
-  margin-bottom: 0.45em;
-
-  color: #5f6368;
-
-  font-size: 0.75em;
-
-  font-weight: bold;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
+#workskin .wired-question[open] .wired-full-question {
+  visibility: visible;
 }
 
 
@@ -515,3 +424,183 @@
   text-transform: uppercase;
 }
 
+
+/* =========================================================
+   AO3 OVERRIDES
+   AO3-SAFE ALIGNMENT FIXES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   REMOVE AO3 PARAGRAPH SPACING
+   --------------------------------------------------------- */
+
+#workskin .wired-interview p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   SEARCH BAR
+   --------------------------------------------------------- */
+
+/*
+   AO3 may wrap the search-bar elements in <p>.
+   display: contents lets the actual spans participate
+   directly in the flex layout.
+*/
+
+#workskin .wired-search > p {
+  display: contents;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*
+   AO3 may insert <br> around text.
+*/
+
+#workskin .wired-search br {
+  display: none;
+}
+
+
+/*
+   Keep search bar at a fixed height.
+*/
+
+#workskin .wired-search {
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
+}
+
+
+/* ---------------------------------------------------------
+   QUESTIONS
+   --------------------------------------------------------- */
+
+/*
+   Fixed pixel height prevents AO3's paragraph/line-height
+   handling from making the rows enormous.
+*/
+
+#workskin .wired-question {
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+
+/*
+   Make the clickable summary a flex container.
+
+   This centers BOTH the question text and the tape
+   vertically without using a giant line-height.
+*/
+
+#workskin .wired-question summary {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
+
+  margin: 0;
+  padding: 0 1em;
+
+  background: #fff;
+
+  color: #202124;
+
+  font-size: 1.08em;
+  line-height: 1.5;
+
+  cursor: pointer;
+}
+
+
+/*
+   Keep the tape directly beside the question.
+*/
+
+#workskin .wired-question summary .wired-tape {
+  flex: 0 0 auto;
+
+  margin-left: 0.35em;
+}
+
+
+/* ---------------------------------------------------------
+   REVEALED QUESTION
+   --------------------------------------------------------- */
+
+#workskin .wired-full-question {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  height: 52px;
+
+  margin: 0;
+  padding: 0 1em;
+
+  background: #fff;
+
+  color: #202124;
+
+  font-size: 1.08em;
+  line-height: 1.5;
+
+  font-weight: 500;
+
+  border: none;
+
+  visibility: hidden;
+}
+
+
+/*
+   AO3 may put the revealed text inside <p>.
+   Make the paragraph behave like ordinary inline text.
+*/
+
+#workskin .wired-full-question p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+#workskin .wired-footer p {
+  margin: 0;
+  padding: 0;
+}
