@@ -180,7 +180,7 @@
     box-sizing: border-box;
 
     width: 100%;
-    height: 38px;
+    height: 40px;
 
     padding-left: 20px;
     padding-right: 70px;
@@ -192,7 +192,7 @@
 
     white-space: nowrap;
 
-    line-height: 38px;
+    line-height: 40px;
 }
 
 
@@ -467,21 +467,6 @@
 }
 
 
-/* ---------------------------------------------------------
-   VIDEO INFO / ACTION ROW
-   --------------------------------------------------------- */
-
-.youtube-video-info-row {
-    width: 100%;
-
-    box-sizing: border-box;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-top: 14px;
-}
 
 
 /* ---------------------------------------------------------
@@ -492,11 +477,13 @@
     display: flex;
     align-items: center;
 
+    flex: 1 1 auto;
+    min-width: 0;
+
     margin: 0;
     padding: 0;
 
     text-decoration: none;
-
     color: #222222;
 }
 
@@ -541,6 +528,8 @@
     display: flex;
     flex-direction: column;
 
+    min-width: 0;
+
     margin: 0;
     padding: 0;
 }
@@ -577,6 +566,8 @@
     color: #222222;
 
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -597,6 +588,8 @@
     color: #666666;
 
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -632,6 +625,9 @@
     display: flex;
     align-items: center;
 
+    flex: 0 1 auto;
+    min-width: 0;
+
     margin: 0;
     padding: 0;
 }
@@ -664,7 +660,7 @@
 
     box-sizing: border-box;
 
-    margin: 0 0 0 8px;
+    margin: 0;
     padding: 0;
 
     border: 0 !important;
@@ -676,6 +672,17 @@
     color: #222222;
 }
 
+.youtube-actions-gap {
+    flex: 1 1 20px;
+
+    max-width: 20px;
+    min-width: 0;
+
+    height: 1px;
+
+    margin: 0;
+    padding: 0;
+}
 
 /*
    Prevent AO3's normal link styling from creating
@@ -722,8 +729,9 @@
 
     margin-top: 20px;
     padding: 0;
-}
 
+    min-width: 0;
+}
 
 
 /* ---------------------------------------------------------
