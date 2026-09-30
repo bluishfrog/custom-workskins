@@ -524,6 +524,19 @@
 }
 
 
+/*
+   AO3 may wrap the channel image in a <p>.
+   Remove that wrapper from the layout.
+*/
+
+.youtube-video-channel > p {
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
 /* Channel picture */
 
 .youtube-channel-icon {
@@ -543,10 +556,39 @@
 }
 
 
+/* ---------------------------------------------------------
+   CHANNEL TEXT
+   --------------------------------------------------------- */
+
+.youtube-channel-info {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   AO3 wraps each span in its own <p>.
+   Make those paragraphs invisible to the flex layout.
+*/
+
+.youtube-channel-info > p {
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
 /* Channel name */
 
 .youtube-channel-name {
     display: block;
+
+    margin: 0;
+    padding: 0;
 
     font-family: Arial, Helvetica, sans-serif;
 
@@ -560,8 +602,14 @@
     white-space: nowrap;
 }
 
+
+/* Subscriber count */
+
 .youtube-channel-subs {
     display: block;
+
+    margin: 3px 0 0 0;
+    padding: 0;
 
     font-family: Arial, Helvetica, sans-serif;
 
@@ -569,10 +617,35 @@
 
     line-height: 1.2;
 
-    color: #222222;
+    color: #666666;
 
     white-space: nowrap;
 }
+
+
+/*
+   AO3 sometimes inserts <br> inside these spans.
+   We don't need them because CSS controls the layout.
+*/
+
+.youtube-channel-name br,
+.youtube-channel-subs br {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   TITLE — AO3 PARAGRAPH CORRECTION
+   --------------------------------------------------------- */
+
+.youtube-video-title > p {
+    margin: 0;
+    padding: 0;
+
+    line-height: inherit;
+}
+
+
 
 /* ---------------------------------------------------------
    ACTIONS
@@ -582,32 +655,97 @@
     display: flex;
     align-items: center;
 
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 
-/* Clickable action area */
+/*
+   AO3 wraps each <a> in a <p>.
+   Make those paragraphs invisible to the layout.
+*/
+
+.youtube-video-actions > p {
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   Each action is a clickable area.
+*/
 
 .youtube-video-action {
+    width: 42px;
+    height: 42px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 30px;
-    height: 30px;
-
     box-sizing: border-box;
 
-    margin: 0;
+    margin: 0 0 0 8px;
     padding: 0;
 
-    text-decoration: none;
+    border: 0 !important;
+
+    background: transparent;
+
+    text-decoration: none !important;
 
     color: #222222;
 }
 
 
+/*
+   Prevent AO3's normal link styling from creating
+   an underline/border around the clickable area.
+*/
+
+.youtube-video-action:hover,
+.youtube-video-action:focus,
+.youtube-video-action:active,
+.youtube-video-action:visited {
+    border: 0 !important;
+    text-decoration: none !important;
+}
+
+
+/*
+   PNG icon
+*/
+
+.youtube-action-icon {
+    display: block;
+
+    width: 28px;
+    height: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0 !important;
+}
+
+/* ---------------------------------------------------------
+   VIDEO INFO / ACTION ROW
+   --------------------------------------------------------- */
+
+.youtube-video-info-row {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding: 0;
+}
 
 
 
