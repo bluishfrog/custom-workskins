@@ -1,0 +1,806 @@
+/* =========================================================
+   YOUTUBE PAGE — MOBILE LAYOUT
+   STRUCTURE TEST
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   WHOLE YOUTUBE PAGE
+   --------------------------------------------------------- */
+
+.youtube-page {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 2em auto;
+
+    box-sizing: border-box;
+    background: #ffffff;
+
+    border-radius: 3px;
+    border: 1px solid #d2d1dc;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* =========================================================
+   YOUTUBE TOP BAR
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   TOP BAR
+   --------------------------------------------------------- */
+
+.youtube-top-bar {
+    width: 100%;
+    height: 70px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 16px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
+
+    line-height: 1;
+}
+
+
+/* ---------------------------------------------------------
+   HAMBURGER
+   --------------------------------------------------------- */
+
+.youtube-menu-button {
+    width: 28px;
+    height: 28px;
+
+    flex: 0 0 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-right: 18px;
+}
+
+.youtube-menu-button span {
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    margin: 3px 0;
+
+    background: #222222;
+
+    border-radius: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   YOUTUBE LOGO
+   --------------------------------------------------------- */
+
+.youtube-logo {
+    height: 40px;
+
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    margin-right: 24px;
+
+    line-height: 1;
+}
+
+.youtube-logo-icon {
+    width: 44px;
+    height: 30px;
+
+    flex: 0 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 5px;
+
+    background: #ff0033;
+
+    border-radius: 7px;
+}
+
+.youtube-logo-icon span {
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    margin-left: 2px;
+
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 11px solid #ffffff;
+}
+
+.youtube-logo-text {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+
+    color: #111111;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   SEARCH
+   --------------------------------------------------------- */
+
+.youtube-search {
+    height: 40px;
+
+    flex: 1 1 auto;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    margin-right: 16px;
+
+    border: 1px solid #cccccc;
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* Search placeholder */
+
+.youtube-search-placeholder {
+    display: block;
+
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 38px;
+
+    padding-left: 20px;
+    padding-right: 70px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+
+    color: #777777;
+
+    white-space: nowrap;
+
+    line-height: 38px;
+}
+
+
+/* ---------------------------------------------------------
+   SEARCH BUTTON
+   --------------------------------------------------------- */
+
+.youtube-search-button {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 62px;
+    height: 40px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-left: 1px solid #dddddd;
+
+    background: #f8f8f8;
+}
+
+
+/* ---------------------------------------------------------
+   MAGNIFYING GLASS
+   --------------------------------------------------------- */
+
+.youtube-search-icon {
+    display: block;
+
+    width: 16px;
+    height: 16px;
+
+    box-sizing: border-box;
+
+    border: 3px solid #222222;
+    border-radius: 50%;
+
+    position: relative;
+    left: 7px;
+    top: -3px;
+
+    margin: 0;
+}
+
+
+/* Handle */
+
+.youtube-search-icon:after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 3px;
+
+    right: -7px;
+    bottom: -4px;
+
+    background: #222222;
+
+    border-radius: 2px;
+
+    transform: rotate(45deg);
+}
+
+
+/* ---------------------------------------------------------
+   ACCOUNT
+   --------------------------------------------------------- */
+
+.youtube-account {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+}
+
+.youtube-profile-picture {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+}
+
+.youtube-account a {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    text-decoration: none;
+}
+
+.youtube-profile-picture {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+}
+
+
+
+
+
+/* ---------------------------------------------------------
+   MAIN CONTENT
+   --------------------------------------------------------- */
+
+.youtube-main-content {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    /* Mobile layout: everything stacks vertically */
+    display: block;
+}
+
+
+/* ---------------------------------------------------------
+   CONTAINER 1
+   Contains:
+   
+   - main video
+   - comments
+   --------------------------------------------------------- */
+
+.youtube-container-1 {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+}
+
+
+
+/* ---------------------------------------------------------
+   FAKE VIDEO PLAYER
+   --------------------------------------------------------- */
+
+.youtube-video-player {
+    width: 100%;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background: #000000;
+
+    border-radius: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   VIDEO LINK
+   --------------------------------------------------------- */
+
+.youtube-video-link {
+    display: block;
+
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   VIDEO THUMBNAIL
+   --------------------------------------------------------- */
+
+.youtube-video-thumbnail {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+}
+
+
+/* ---------------------------------------------------------
+   PLAY BUTTON
+   --------------------------------------------------------- */
+
+.youtube-play-button {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 70px;
+    height: 50px;
+
+    box-sizing: border-box;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ff0033;
+
+    border-radius: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   PLAY TRIANGLE
+   --------------------------------------------------------- */
+
+.youtube-play-triangle {
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    margin-left: 5px;
+
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 20px solid #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   VIDEO TITLE
+   --------------------------------------------------------- */
+
+.youtube-video-title {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 16px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    color: #111111;
+}
+
+
+/* ---------------------------------------------------------
+   VIDEO INFO / ACTION ROW
+   --------------------------------------------------------- */
+
+.youtube-video-info-row {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 14px;
+}
+
+
+/* ---------------------------------------------------------
+   CHANNEL
+   --------------------------------------------------------- */
+
+.youtube-video-channel {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+
+    color: #222222;
+}
+
+
+/* Channel picture */
+
+.youtube-channel-icon {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    margin: 0 12px 0 0;
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+}
+
+
+/* Channel name */
+
+.youtube-channel-name {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: #222222;
+
+    white-space: nowrap;
+}
+
+.youtube-channel-subs {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    color: #222222;
+
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------------------
+   ACTIONS
+   --------------------------------------------------------- */
+
+.youtube-video-actions {
+    display: flex;
+    align-items: center;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* Clickable action area */
+
+.youtube-video-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+
+    color: #222222;
+}
+
+
+
+
+
+/* ---------------------------------------------------------
+   COMMENTS
+   --------------------------------------------------------- */
+
+.youtube-comments {
+    width: 100%;
+    min-height: 500px;
+
+    box-sizing: border-box;
+
+    margin-top: 20px;
+    padding: 20px;
+
+    background: #66cc66;
+    border: 3px solid #228822;
+}
+
+
+/* ---------------------------------------------------------
+   CONTAINER 2
+   Contains:
+   
+   - suggested videos
+   --------------------------------------------------------- */
+
+.youtube-container-2 {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    background: #cc66ff;
+}
+
+
+/* ---------------------------------------------------------
+   SUGGESTED VIDEOS
+   --------------------------------------------------------- */
+
+.youtube-suggested {
+    width: 100%;
+    min-height: 400px;
+
+    box-sizing: border-box;
+
+    padding: 20px;
+
+    background: #ff66aa;
+    border: 3px solid #aa2255;
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM BAR
+   --------------------------------------------------------- */
+
+.youtube-bottom-bar {
+    width: 100%;
+    min-height: 100px;
+
+    box-sizing: border-box;
+
+    background: #777777;
+    border-top: 3px solid #333333;
+}
+
+
+
+
+
+/* =========================================================
+   AO3 CORRECTIONS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   TOP BAR
+   --------------------------------------------------------- */
+
+/*
+   The top bar itself should never have paragraph spacing.
+
+   IMPORTANT:
+   We do NOT hide <p> here.
+   If AO3 happens to put the top-bar contents inside a
+   paragraph, hiding it would hide the actual contents too.
+*/
+
+.youtube-top-bar p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+
+/*
+   Remove line breaks that AO3 may insert directly into
+   the top bar.
+*/
+
+.youtube-top-bar > br {
+    display: none;
+}
+
+
+/*
+   Remove an AO3 <br> when it appears inside a paragraph
+   in the top bar.
+*/
+
+.youtube-top-bar p br {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   BETWEEN MAIN CONTAINERS
+   --------------------------------------------------------- */
+
+/*
+   AO3 can produce:
+
+       .youtube-container-1
+
+       <p><br></p>
+
+       .youtube-container-2
+
+   We don't want this paragraph creating a gap.
+*/
+
+.youtube-main-content > p {
+    display: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   Also remove a naked <br> between the containers.
+*/
+
+.youtube-main-content > br {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   INSIDE STRUCTURAL CONTAINERS
+   --------------------------------------------------------- */
+
+/*
+   Empty AO3 paragraphs directly inside the containers
+   should not create extra space.
+*/
+
+.youtube-container-1 > p:empty,
+.youtube-container-2 > p:empty {
+    display: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   AO3 commonly creates:
+
+       <p><br></p>
+
+   :has() catches that specific case.
+*/
+
+.youtube-container-1 > p:has(> br:only-child),
+.youtube-container-2 > p:has(> br:only-child) {
+    display: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   Remove naked <br> elements directly inside the
+   structural containers.
+*/
+
+.youtube-container-1 > br,
+.youtube-container-2 > br {
+    display: none;
+}

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Calendar Test</title>
+    <title>Youtube Test</title>
 
     <link rel="stylesheet" href="skins/regular_ao3.css">
     <link rel="stylesheet" href="skins/blu_ao3.css">
-    <link rel="stylesheet" href="skins/legal_pad_worksin.css">
+    <link rel="stylesheet" href="skins/blu_youtube.css">
 </head>
 
 <body>
@@ -19,79 +19,181 @@
         <p>here some beginning text just as a placeholder.</p>
 
 
-        <div class="legal-pad">
+        <!-- whole youtube wrapper -->
+        <div class="youtube-page">
 
-            <!-- THE TOP OF THE LEGAL PAD -->
-            <div class="pad-top"></div>
+            <!-- top bar with logo search bar etc-->
 
+            <div class="youtube-top-bar">
 
-            <!-- RED MARGIN -->
-            <div class="pad-margin"></div>
-        
-            <!-- =================================================
-         BLUE RULES
-         These are BEHIND the writing.
-         ================================================= -->
+                <div class="youtube-menu-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
-            <div class="pad-rules">
+                <div class="youtube-logo">
+                    <span class="youtube-logo-icon">
+                        <span></span>
+                    </span>
 
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
-                <div class="pad-rule"></div>
+                    <span class="youtube-logo-text">YouTube</span>
+                </div>
+
+                <div class="youtube-search">
+                    <span class="youtube-search-placeholder">Search</span>
+
+                    <div class="youtube-search-button">
+                        <span class="youtube-search-icon"></span>
+                    </div>
+                </div>
+
+                <div class="youtube-account">
+                    <a href="https://www.tumblr.com/bluishfrog">
+                        <img class="youtube-profile-picture"
+                            src="https://github.com/bluishfrog/hosting-fic-content/blob/main/discord_multimedia/bluishfrog_profile_pic.jpg?raw=true"
+                            alt="Profile">
+                    </a>
+                </div>
 
             </div>
 
 
-            <!-- =================================================
-         WRITING
-         This sits ON TOP of the rules.
-         ================================================= -->
+            <!-- contains the main content -->
+            <div class="youtube-main-content">
 
-            <div class="pad-writing">
+                <!-- container 1 -->
+                <div class="youtube-container-1">
 
-                <p class="brian">
-                    Those are some very important notes by Brian
-                </p>
 
-                <p class="will">
-                    this is a comment by Will
-                </p>
+                    <div class="youtube-main-video">
 
-                <p class="brian">
-                    Anohter important note by Brian
-                </p>
+                        <div class="youtube-video-player">
 
-                <p class="will will-margin">
-                    A stupid comment by Will
-                </p>
+                            <a class="youtube-video-link" href="https://www.youtube.com/watch?v=bRdjk2lsGjM">
+                                <img class="youtube-video-thumbnail"
+                                    src="https://github.com/bluishfrog/hosting-fic-content/blob/main/discord_multimedia/testing_video.jpg?raw=true"
+                                    alt="Watch video">
 
-                <p class="brian">
-                    And Brian brings it home and tries to go back to the importnat stuff
-                </p>
+                                <span class="youtube-play-button">
+                                    <span class="youtube-play-triangle"></span>
+                                </span>
+                            </a>
 
-                <p class="will will-note">
-                    nerd - Will
-                </p>
+                        </div>
+
+                        <div class="youtube-video-title">
+                            This is the title of the video (make it longer to test it)
+                        </div>
+
+                        <!-- video information and actions -->
+                        <div class="youtube-video-info-row">
+
+                            <!-- channel -->
+                            <div class="youtube-video-channel">
+
+                                <img class="youtube-channel-icon"
+                                    src="https://github.com/bluishfrog/hosting-fic-content/blob/main/twitter_accounts/profile_pictures/wm_hold.jpg?raw=true"
+                                    alt="Channel">
+
+                                <div class="youtube-channel-info">
+
+                                    <span class="youtube-channel-name">
+                                        Official Willmack Channel
+                                    </span>
+
+                                    <span class="youtube-channel-subs">
+                                        27.100 Subscribers
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- actions -->
+                            <div class="youtube-video-actions">
+
+                                <a href="YOUR_SHARE_LINK" class="youtube-video-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                        focusable="false" aria-hidden="true"
+                                        style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                        <path
+                                            d="M10 3.158V7.51c-5.428.223-8.27 3.75-8.875 11.199-.04.487-.07.975-.09 1.464l-.014.395c-.014.473.578.684.88.32.302-.368.61-.73.925-1.086l.244-.273c1.79-1.967 3-2.677 4.93-2.917a18.011 18.011 0 012-.112v4.346a1 1 0 001.646.763l9.805-8.297 1.55-1.31-1.55-1.31-9.805-8.297A1 1 0 0010 3.158Zm2 6.27v.002-4.116l7.904 6.688L12 18.689v-4.212l-2.023.024c-1.935.022-3.587.17-5.197 1.024a9 9 0 00-1.348.893c.355-1.947.916-3.39 1.63-4.425 1.062-1.541 2.607-2.385 5.02-2.485L12 9.428Z">
+                                        </path>
+                                    </svg>
+                                </a>
+
+                                <a href="YOUR_SAVE_LINK" class="youtube-video-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                        focusable="false" aria-hidden="true"
+                                        style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                        <path
+                                            d="M19 2H5a2 2 0 00-2 2v16.887c0 1.266 1.382 2.048 2.469 1.399L12 18.366l6.531 3.919c1.087.652 2.469-.131 2.469-1.397V4a2 2 0 00-2-2ZM5 20.233V4h14v16.233l-6.485-3.89-.515-.309-.515.309L5 20.233Z">
+                                        </path>
+                                    </svg>
+                                </a>
+
+                                <a href="YOUR_MORE_LINK" class="youtube-video-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                        focusable="false" aria-hidden="true"
+                                        style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                        <path
+                                            d="M6 10a2 2 0 100 4 2 2 0 000-4Zm6 0a2 2 0 100 4 2 2 0 000-4Zm6 0a2 2 0 100 4 2 2 0 000-4Z">
+                                        </path>
+                                    </svg>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        contains:
+                        channel info stats, etc
+                        video description
+
+                    </div>
+
+                    <div class="youtube-comments">
+
+                        contains:
+                        individual comments that can have answer comments to it
+
+                    </div>
+
+
+
+                </div>
+
+
+                <!-- container 2 -->
+                <!-- on the left side when screen wide enough, else below container 1 -->
+                <div class="youtube-container-2">
+
+                    <div class="youtube-suggested">
+
+                        contains suggested videos
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- bottom bar with some info-->
+            <div class="youtube-bottom-bar">
 
             </div>
 
         </div>
+
+
+
+        <p>here some beginning text just as a placeholder.</p>
 
     </div>
 
