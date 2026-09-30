@@ -11,6 +11,7 @@
 .youtube-page {
     width: 100%;
     max-width: 800px;
+    min-width: 300px;
 
     margin: 2em auto;
 
@@ -152,6 +153,7 @@
 
 .youtube-search {
     height: 40px;
+    min-width: 40px;
 
     flex: 1 1 auto;
 
@@ -204,7 +206,9 @@
     top: 0;
     right: 0;
 
-    width: 62px;
+    width: 100%;
+    max-width: 62px;
+
     height: 40px;
 
     box-sizing: border-box;
@@ -224,46 +228,19 @@
 
 
 /* ---------------------------------------------------------
-   MAGNIFYING GLASS
+   SEARCH PNG ICON
    --------------------------------------------------------- */
 
 .youtube-search-icon {
     display: block;
 
-    width: 16px;
-    height: 16px;
-
-    box-sizing: border-box;
-
-    border: 3px solid #222222;
-    border-radius: 50%;
-
-    position: relative;
-    left: 7px;
-    top: -3px;
+    width: 20px;
+    height: 20px;
 
     margin: 0;
-}
+    padding: 0;
 
-
-/* Handle */
-
-.youtube-search-icon:after {
-    content: "";
-
-    position: absolute;
-
-    width: 8px;
-    height: 3px;
-
-    right: -7px;
-    bottom: -4px;
-
-    background: #222222;
-
-    border-radius: 2px;
-
-    transform: rotate(45deg);
+    border: 0;
 }
 
 
