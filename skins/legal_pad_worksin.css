@@ -1,0 +1,175 @@
+/* =====================================================
+   YELLOW LEGAL PAD
+   ===================================================== */
+
+.legal-pad {
+    position: relative;
+    box-sizing: border-box;
+
+    max-width: 620px;
+    min-height: 700px;
+
+    margin: 2em auto;
+    padding: 58px 40px 60px 75px;
+
+    background-color: #f5e486;
+
+    color: #24221d;
+
+    box-shadow:
+        3px 5px 12px rgba(0, 0, 0, 0.20),
+        -1px 1px 3px rgba(0, 0, 0, 0.08);
+
+    border-radius: 2px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   TOP ROLL
+   ===================================================== */
+
+.legal-pad .pad-top {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 30px;
+
+    background-color: #e8d573;
+
+    border-bottom: 2px solid rgba(145, 120, 40, 0.20);
+
+    border-radius: 2px;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   RED MARGIN
+   ===================================================== */
+
+.legal-pad .pad-margin {
+    position: absolute;
+
+    top: 30px;
+    bottom: 0;
+    left: 54px;
+
+    width: 1px;
+
+    background-color: rgba(185, 65, 60, 0.55);
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   BLUE RULES
+   -----------------------------------------------------
+   These sit BEHIND the writing.
+   ===================================================== */
+
+.legal-pad .pad-rules {
+    position: absolute;
+
+    top: 58px;
+    left: 75px;
+    right: 40px;
+    bottom: 60px;
+
+    z-index: 1;
+}
+
+
+/* Each individual blue line */
+
+.legal-pad .pad-rule {
+    height: 28px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(80, 125, 155, 0.38);
+}
+
+
+/* =====================================================
+   WRITING
+   ===================================================== */
+
+.legal-pad .pad-writing {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 28px;
+}
+
+
+/* Remove normal paragraph spacing */
+
+.legal-pad .pad-writing p {
+    margin: 0;
+    padding: 0;
+
+    line-height: 28px;
+}
+
+
+/* =====================================================
+   BRIAN
+   -----------------------------------------------------
+   Neat handwriting
+   ===================================================== */
+
+.legal-pad .brian {
+    
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Chalkboard",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 1em;
+
+    line-height: 28px;
+
+    letter-spacing: 0.01em;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =====================================================
+   WILL
+   -----------------------------------------------------
+   Scribbly handwriting
+   ===================================================== */
+
+.legal-pad .will {
+
+    font-family:
+        "Comic Sans MS",
+        "Chalkboard",
+        "Trebuchet MS",
+        "Arial",
+        sans-serif;
+        
+    font-size: 1.25em;
+
+    line-height: 28px;
+
+    letter-spacing: 0.025em;
+
+    margin: 0;
+    padding: 0;
+}
