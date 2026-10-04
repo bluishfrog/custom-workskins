@@ -215,9 +215,25 @@
 
 /* No line after final question */
 
-#workskin .wired-question:last-child {
+#workskin .wired-question:not(.single-question):last-child {
   border-bottom: none;
 }
+
+
+/* special question with only question */
+
+#workskin .single-question {
+
+  position: relative;
+
+  height: 3.5em;
+
+  overflow: hidden;
+
+  border: 1px solid #d2d1dc;
+  border-radius: 10px;
+}
+
 
 
 /* =========================================================
