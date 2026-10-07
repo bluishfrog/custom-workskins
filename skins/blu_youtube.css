@@ -478,7 +478,24 @@
     color: #111111;
 }
 
+/* ---------------------------------------------------------
+   VERIFIED CHANNEL CHECKMARK
+   --------------------------------------------------------- */
 
+.youtube-checkmark {
+
+    display: inline-block;
+
+    width: 14px;
+    height: 14px;
+
+    margin: 0 0 0 4px;
+    padding: 0;
+
+    border: 0 !important;
+
+    vertical-align: -2px;
+}
 
 
 /* ---------------------------------------------------------
@@ -1161,7 +1178,7 @@
 
 
 /*
-   AO3 wraps every action in <p>.
+   AO3 may wrap individual elements in <p>.
    Make those wrappers invisible to the flex layout.
 */
 
@@ -1171,52 +1188,6 @@
 
     margin: 0;
     padding: 0;
-}
-
-
-/* ---------------------------------------------------------
-   COMMENT ACTION ICON LINKS
-   --------------------------------------------------------- */
-
-.youtube-comment-action {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 28px;
-    height: 28px;
-
-    box-sizing: border-box;
-
-    margin: 0 8px 0 0;
-    padding: 0;
-
-    border: 0 !important;
-    border-bottom: 0 !important;
-
-    background: transparent;
-
-    text-decoration: none !important;
-}
-
-
-/*
-   Kill AO3 link styling in every state.
-*/
-
-.youtube-comment-action:link,
-.youtube-comment-action:visited,
-.youtube-comment-action:hover,
-.youtube-comment-action:focus,
-.youtube-comment-action:active {
-
-    border: 0 !important;
-    border-bottom: 0 !important;
-
-    background: transparent !important;
-
-    text-decoration: none !important;
 }
 
 
@@ -1231,7 +1202,11 @@
     width: 20px;
     height: 20px;
 
-    margin: 0;
+    flex: 0 0 20px;
+
+    box-sizing: border-box;
+
+    margin: 0 8px 0 0;
     padding: 0;
 
     border: 0 !important;
@@ -1244,7 +1219,10 @@
 
 .youtube-comment-count {
 
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+
+    height: 28px;
 
     margin: 0 14px 0 0;
     padding: 0;
@@ -1265,6 +1243,33 @@
 .youtube-comment-count br {
 
     display: none;
+}
+
+
+/* ---------------------------------------------------------
+   REPLY
+   --------------------------------------------------------- */
+
+.youtube-comment-reply {
+
+    display: inline-flex;
+    align-items: center;
+
+    height: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #222222;
+
+    text-decoration: none;
 }
 
 
@@ -1426,6 +1431,101 @@
     margin-bottom: 0;
 }
 
+
+/* ---------------------------------------------------------
+   ADD COMMENT
+   --------------------------------------------------------- */
+
+.youtube-add-comment {
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 20px 0 0 0;
+    padding: 0;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    background: transparent;
+
+    color: #666666;
+
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   ADD COMMENT AVATAR
+   --------------------------------------------------------- */
+
+.youtube-add-comment-avatar {
+
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    margin: 0 16px 0 0;
+    padding: 0;
+
+    border: 0 !important;
+    border-radius: 50%;
+}
+
+
+/* ---------------------------------------------------------
+   ADD COMMENT FIELD
+   --------------------------------------------------------- */
+
+.youtube-add-comment-field {
+
+    display: flex;
+    align-items: center;
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    height: 40px;
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-bottom: 2px solid #cccccc;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+    line-height: 1;
+
+    color: #666666;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+.youtube-add-comment:hover {
+
+    text-decoration: none !important;
+}
+
+
+.youtube-add-comment:hover .youtube-add-comment-field {
+
+    border-bottom-color: #999999;
+}
 
 /* ---------------------------------------------------------
    CONTAINER 2
