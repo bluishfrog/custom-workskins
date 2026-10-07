@@ -735,6 +735,197 @@
 
 
 /* ---------------------------------------------------------
+   MAIN VIDEO DESCRIPTION
+   --------------------------------------------------------- */
+
+.youtube-video-description {
+
+    width: auto;
+
+    box-sizing: border-box;
+
+    margin-top: 20px;
+    padding: 12px 15px;
+
+    border-radius: 6px;
+
+    background: #f8f8f8;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+/* ---------------------------------------------------------
+   NORMAL DESCRIPTION PARAGRAPHS
+   --------------------------------------------------------- */
+
+.youtube-video-description > p {
+
+    margin: 0 0 10px 0;
+    padding: 0;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+/*
+   Don't leave extra space after the final paragraph.
+*/
+
+.youtube-video-description > p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   NORMAL DESCRIPTION LINKS
+   --------------------------------------------------------- */
+
+.youtube-video-description > p a {
+
+    display: inline;
+
+    margin: 0;
+    padding: 0 5px;
+
+    background: #e5e5e5;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    border-radius: 6px;
+
+    text-decoration: none !important;
+}
+
+
+/*
+   AO3 link states can add their own border/text styling.
+   Explicitly reset all of them.
+*/
+
+.youtube-video-description > p a:link,
+.youtube-video-description > p a:visited,
+.youtube-video-description > p a:hover,
+.youtube-video-description > p a:focus,
+.youtube-video-description > p a:active {
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE YOUTUBE ICON
+   --------------------------------------------------------- */
+
+.youtube-inline-icon {
+
+    display: inline-block;
+
+    width: 13px;
+    height: 13px;
+
+    margin: 0 4px 0 0;
+    padding: 0;
+
+    border: 0 !important;
+    border-radius: 50%;
+
+    vertical-align: -2px;
+}
+
+
+/* ---------------------------------------------------------
+   CHAPTER / DESCRIPTION CONTENT
+   --------------------------------------------------------- */
+
+.youtube-description-content {
+
+    margin: 4px 0 10px 0;
+    padding: 0;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/*
+   AO3 turns these into paragraphs.
+   We control their spacing ourselves.
+*/
+
+.youtube-description-content > p {
+
+    margin: 0 0 4px 0;
+    padding: 0;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/*
+   No extra space after the final chapter.
+*/
+
+.youtube-description-content > p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   CHAPTER LINKS
+   --------------------------------------------------------- */
+
+.youtube-description-content > p a {
+
+    display: inline;
+
+    margin: 0;
+    padding: 0;
+
+    color: #065fd4 !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    text-decoration: none !important;
+}
+
+
+/*
+   AO3 link states — keep timestamps completely clean.
+*/
+
+.youtube-description-content > p a:link,
+.youtube-description-content > p a:visited,
+.youtube-description-content > p a:focus,
+.youtube-description-content > p a:active {
+
+    color: #065fd4 !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    text-decoration: none !important;
+}
+
+.youtube-description-content > p a:hover {
+    text-decoration: underline !important;
+}
+
+
+/* ---------------------------------------------------------
    COMMENTS
    --------------------------------------------------------- */
 
@@ -800,8 +991,6 @@
     background: #777777;
     border-top: 3px solid #333333;
 }
-
-
 
 
 
