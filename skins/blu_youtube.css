@@ -2,7 +2,18 @@
    YOUTUBE PAGE — MOBILE LAYOUT
    STRUCTURE TEST
    ========================================================= */
+.youtube-page hr {
+    display: block;
 
+    width: 100%;
+    height: 0;
+
+    margin: 30px 0;
+    padding: 0;
+
+    border: 0;
+    border-top: 1px solid #d2d1dc;
+}
 
 /* ---------------------------------------------------------
    WHOLE YOUTUBE PAGE
@@ -23,6 +34,7 @@
 
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 
 
@@ -930,16 +942,488 @@
    --------------------------------------------------------- */
 
 .youtube-comments {
+
     width: 100%;
-    min-height: 500px;
 
     box-sizing: border-box;
 
     margin-top: 20px;
-    padding: 20px;
+    padding: 0;
 
-    background: #66cc66;
-    border: 3px solid #228822;
+    background: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   INDIVIDUAL COMMENT
+   --------------------------------------------------------- */
+
+.youtube-comment {
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0 0 24px 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT AVATAR
+   --------------------------------------------------------- */
+
+.youtube-comment-avatar {
+
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    margin: 0 16px 0 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+}
+
+
+/*
+   AO3 may wrap the avatar image in <p>.
+*/
+
+.youtube-comment > p:has(> .youtube-comment-avatar) {
+
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT BODY
+   --------------------------------------------------------- */
+
+.youtube-comment-body {
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT HEADER
+   --------------------------------------------------------- */
+
+.youtube-comment-header {
+
+    display: flex;
+    align-items: baseline;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 1.2;
+}
+
+
+/*
+   AO3 wraps the name/time spans in <p>.
+*/
+
+.youtube-comment-header > p {
+
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT NAME
+   --------------------------------------------------------- */
+
+.youtube-comment-name {
+
+    display: inline;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: #111111;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT TIME
+   --------------------------------------------------------- */
+
+.youtube-comment-time {
+
+    display: inline;
+
+    margin: 0 0 0 6px;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #666666;
+
+    white-space: nowrap;
+}
+
+
+/*
+   AO3 inserts <br> around the spans.
+   They are not wanted here.
+*/
+
+.youtube-comment-name br,
+.youtube-comment-time br {
+
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT TEXT
+   --------------------------------------------------------- */
+
+.youtube-comment-text {
+
+    margin: 6px 0 0 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+    line-height: 1.4;
+
+    color: #111111;
+}
+
+
+/*
+   AO3 turns the text into a paragraph.
+*/
+
+.youtube-comment-text > p {
+
+    margin: 0;
+    padding: 0;
+
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT ACTIONS
+   --------------------------------------------------------- */
+
+.youtube-comment-actions {
+
+    display: flex;
+    align-items: center;
+
+    margin: 8px 0 0 0;
+    padding: 0;
+
+    min-height: 28px;
+}
+
+
+/*
+   AO3 wraps every action in <p>.
+   Make those wrappers invisible to the flex layout.
+*/
+
+.youtube-comment-actions > p {
+
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT ACTION ICON LINKS
+   --------------------------------------------------------- */
+
+.youtube-comment-action {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    box-sizing: border-box;
+
+    margin: 0 8px 0 0;
+    padding: 0;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    background: transparent;
+
+    text-decoration: none !important;
+}
+
+
+/*
+   Kill AO3 link styling in every state.
+*/
+
+.youtube-comment-action:link,
+.youtube-comment-action:visited,
+.youtube-comment-action:hover,
+.youtube-comment-action:focus,
+.youtube-comment-action:active {
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    background: transparent !important;
+
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT ACTION ICON
+   --------------------------------------------------------- */
+
+.youtube-comment-action-icon {
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   LIKE COUNT
+   --------------------------------------------------------- */
+
+.youtube-comment-count {
+
+    display: inline-block;
+
+    margin: 0 14px 0 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    line-height: 1;
+
+    color: #555555;
+}
+
+
+/*
+   AO3 puts <br> around the count too.
+*/
+
+.youtube-comment-count br {
+
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   REPLY
+   --------------------------------------------------------- */
+
+.youtube-comment-reply {
+
+    display: inline-flex;
+    align-items: center;
+
+    height: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    background: transparent !important;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #222222;
+
+    text-decoration: none !important;
+}
+
+
+/*
+   Kill AO3 styling.
+*/
+
+.youtube-comment-reply:link,
+.youtube-comment-reply:visited,
+.youtube-comment-reply:hover,
+.youtube-comment-reply:focus,
+.youtube-comment-reply:active {
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    background: transparent !important;
+
+    color: #222222;
+
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   THREE-DOT MENU
+   --------------------------------------------------------- */
+
+.youtube-comment-menu {
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 24px;
+    height: 24px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    background: transparent;
+
+    text-decoration: none !important;
+}
+
+
+/*
+   Create the three dots with CSS.
+*/
+
+.youtube-comment-menu::before {
+
+    content: "⋮";
+
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 24px;
+    line-height: 20px;
+
+    text-align: center;
+
+    color: #111111;
+}
+
+
+/*
+   AO3 wraps the menu link in <p>.
+*/
+
+.youtube-comment > p:has(> .youtube-comment-menu) {
+
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   Remove AO3 link styling.
+*/
+
+.youtube-comment-menu:link,
+.youtube-comment-menu:visited,
+.youtube-comment-menu:hover,
+.youtube-comment-menu:focus,
+.youtube-comment-menu:active {
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    background: transparent !important;
+
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   REPLIES
+   --------------------------------------------------------- */
+
+.youtube-comment-replies {
+
+    box-sizing: border-box;
+
+    margin: -8px 0 24px 56px;
+    padding: 0 0 0 24px;
+
+    border-left: 2px solid #eeeeee;
+}
+
+
+/*
+   The reply itself should not have the same large
+   bottom spacing as a top-level comment.
+*/
+
+.youtube-comment-replies > .youtube-comment {
+
+    margin-bottom: 0;
 }
 
 
@@ -1114,5 +1598,113 @@
 
 .youtube-container-1 > br,
 .youtube-container-2 > br {
+    display: none;
+}
+
+/* =========================================================
+   AO3 CORRECTIONS — COMMENTS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   COMMENT AVATAR WRAPPER
+   --------------------------------------------------------- */
+
+.youtube-comment > p:has(> .youtube-comment-avatar) {
+
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT MENU WRAPPER
+   --------------------------------------------------------- */
+
+.youtube-comment > p:has(> .youtube-comment-menu) {
+
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT HEADER PARAGRAPHS
+   --------------------------------------------------------- */
+
+.youtube-comment-header > p {
+
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT ACTION PARAGRAPHS
+   --------------------------------------------------------- */
+
+.youtube-comment-actions > p {
+
+    display: contents;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENT TEXT PARAGRAPHS
+   --------------------------------------------------------- */
+
+.youtube-comment-text > p {
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   AO3 <br> INSIDE COMMENT HEADER
+   --------------------------------------------------------- */
+
+.youtube-comment-name br,
+.youtube-comment-time br,
+.youtube-comment-count br {
+
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   EMPTY PARAGRAPHS INSIDE COMMENTS
+   --------------------------------------------------------- */
+
+.youtube-comment > p:empty,
+.youtube-comment-body > p:empty,
+.youtube-comment-header > p:empty,
+.youtube-comment-actions > p:empty {
+
+    display: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   AO3 <br> DIRECTLY INSIDE COMMENT STRUCTURES
+   --------------------------------------------------------- */
+
+.youtube-comment > br,
+.youtube-comment-body > br,
+.youtube-comment-header > br,
+.youtube-comment-actions > br {
+
     display: none;
 }
