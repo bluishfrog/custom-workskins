@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CYOA Test</title>
+
+    <link rel="stylesheet" href="skins/regular_ao3.css">
+    <link rel="stylesheet" href="skins/blu_ao3.css">
+    <link rel="stylesheet" href="skins/blu_cyoa.css">
+</head>
+
+<body>
+
+    <div id="workskin">
+
+        <div class="cyoa-story">
+            <div class="cyoa-section">
+                <p class="cyoa-section-heading"><a name="cyoa-section-1"
+                        class="cyoa-anchor"></a><span class="cyoa-section-heading-label">(1) Start</span>
+                </p>
+                <div class="cyoa-prose">
+                    <p><br /></p>
+                </div>
+                <div class="cyoa-choices">
+                    <p>Choose:</p>
+                    <ul>
+                        <li class="cyoa-choice"><a href="#cyoa-section-2">Choice 1 (2)</a></li>
+                        <li class="cyoa-choice"><a href="#cyoa-section-3">Choice 2 (3)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="cyoa-divider">-----------</p>
+            <div class="cyoa-section">
+                <p class="cyoa-section-heading"><a name="cyoa-section-2"
+                        class="cyoa-anchor"></a><span class="cyoa-section-heading-label">(2) Example
+                        Section 1</span></p>
+                <div class="cyoa-prose">
+                    <p><br /></p>
+                </div>
+                <div class="cyoa-choices">
+                    <p>Choose:</p>
+                    <ul>
+                        <li class="cyoa-choice"><a href="#cyoa-section-1">Choice 1 (1)</a></li>
+                        <li class="cyoa-choice cyoa-choice-missing">Choice 2 <span>Destination
+                                needed</span></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="cyoa-divider">-----------</p>
+            <div class="cyoa-section">
+                <p class="cyoa-section-heading"><a name="cyoa-section-3"
+                        class="cyoa-anchor"></a><span class="cyoa-section-heading-label">(3) Example
+                        Section 2</span></p>
+                <div class="cyoa-prose">
+                    <p><br /></p>
+                </div>
+                <div class="cyoa-choices">
+                    <p>Choose:</p>
+                    <ul>
+                        <li class="cyoa-choice cyoa-choice-missing">Choice 1 <span>Destination
+                                needed</span></li>
+                        <li class="cyoa-choice cyoa-choice-missing">Choice 2 <span>Destination
+                                needed</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

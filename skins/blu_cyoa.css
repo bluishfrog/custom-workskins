@@ -1,0 +1,102 @@
+.cyoa-story {
+    max-width: 46em;
+    margin: 0 auto
+}
+
+.cyoa-section {
+    margin: 0;
+    padding: 1em 0
+}
+
+.cyoa-divider {
+    margin: 8em 0;
+    color: #8a5a3b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: .9em;
+    line-height: 1;
+    text-align: center
+}
+
+.cyoa-section-heading {
+    margin: 0 0 1em;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35em;
+    font-weight: bold;
+    line-height: 1.3
+}
+
+.cyoa-anchor {
+    border: 0;
+    color: inherit;
+    text-decoration: none
+}
+
+.cyoa-anchor:target+.cyoa-section-heading-label {
+    color: #2f6f73
+}
+
+.cyoa-anchor:target:before {
+    content: "▶";
+    display: inline-block;
+    margin-right: .3em;
+    color: #2f6f73;
+    font-size: .72em;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: .14em
+}
+
+.cyoa-prose {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1em;
+    line-height: 1.6
+}
+
+.cyoa-prose img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1em auto
+}
+
+.cyoa-choices {
+    margin: 2em 0 0
+}
+
+.cyoa-choices p {
+    margin: 0 0 .5em;
+    font-weight: bold
+}
+
+.cyoa-choices ul {
+    margin: 0;
+    padding-left: 1.4em
+}
+
+.cyoa-choice {
+    margin: .75em 0
+}
+
+.cyoa-choice-chapter {
+    margin-bottom: .75em
+}
+
+.cyoa-choice-chapter span {
+    display: block;
+    margin: .55em 0 0;
+    color: #2f6f73;
+    font-size: .85em;
+    font-weight: bold
+}
+
+.cyoa-choice-missing {
+    color: #9c3f36;
+    font-style: italic
+}
+
+.cyoa-ending {
+    margin: 2em 0 0;
+    color: #395e52;
+    font-weight: bold;
+    text-align: center
+}
