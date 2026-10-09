@@ -2239,19 +2239,207 @@
 }
 
 
+
 /* ---------------------------------------------------------
-   BOTTOM BAR
+   FOOTER
    --------------------------------------------------------- */
 
 .youtube-footer {
+    position: relative;
+
     width: 100%;
-    min-height: 100px;
+    min-height: 70px;
 
     box-sizing: border-box;
 
-    background: #777777;
-    border-top: 3px solid #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 24px;
+
+    padding: 20px 16px;
+
+    background: #f8f8f8;
+    border-top: 1px solid #d2d1dc;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
 }
+
+
+/* ---------------------------------------------------------
+   FOOTER POPUP
+   --------------------------------------------------------- */
+
+.youtube-footer-popup {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER LINK
+   --------------------------------------------------------- */
+
+.youtube-footer-link {
+    display: inline-block;
+
+    margin: 0;
+    padding: 4px 0;
+
+    color: #222222;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    list-style: none;
+    text-decoration: none;
+
+    border: 0 !important;
+    background: transparent !important;
+}
+
+
+/* Remove the default disclosure marker */
+
+.youtube-footer-link::-webkit-details-marker {
+    display: none;
+}
+
+.youtube-footer-link::marker {
+    content: "";
+}
+
+
+/* Match the rest of the footer links */
+
+.youtube-footer-link:hover {
+    color: #065fd4;
+    text-decoration: underline;
+}
+
+
+/* ---------------------------------------------------------
+   POPUP CONTENT
+   --------------------------------------------------------- */
+
+.youtube-footer-popup-content {
+    position: absolute;
+
+    bottom: calc(100% + 12px);
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 280px;
+    max-width: calc(100vw - 40px);
+
+    box-sizing: border-box;
+
+    padding: 20px;
+
+    background: #ffffff;
+    color: #222222;
+
+    border: 1px solid #d2d1dc;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    z-index: 20;
+}
+
+
+/* ---------------------------------------------------------
+   SHOW CONTENT ONLY WHEN OPEN
+   --------------------------------------------------------- */
+
+.youtube-footer-popup:not([open]) .youtube-footer-popup-content {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   POPUP HEADING
+   --------------------------------------------------------- */
+
+.youtube-footer-popup-content h3 {
+    margin: 0 0 12px 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    color: #111111;
+}
+
+
+/* ---------------------------------------------------------
+   POPUP PARAGRAPHS
+   --------------------------------------------------------- */
+
+.youtube-footer-popup-content p {
+    margin: 0 0 12px 0;
+    padding: 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* No extra spacing after the last paragraph */
+
+.youtube-footer-popup-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   POPUP LINKS
+   --------------------------------------------------------- */
+
+.youtube-footer-popup-content a {
+    color: #065fd4 !important;
+
+    text-decoration: none !important;
+
+    border: 0 !important;
+    background: transparent !important;
+}
+
+
+/* Underline links on hover */
+
+.youtube-footer-popup-content a:hover {
+    text-decoration: underline !important;
+}
+
+
+/* ---------------------------------------------------------
+   AO3 PARAGRAPH CORRECTIONS
+   --------------------------------------------------------- */
+
+.youtube-footer > p {
+    margin: 0;
+    padding: 0;
+}
+
+.youtube-footer-popup > p {
+    margin: 0;
+    padding: 0;
+}
+
 
 
 
