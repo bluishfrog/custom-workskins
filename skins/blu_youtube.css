@@ -799,17 +799,64 @@
     margin-bottom: 0;
 }
 
-
 /* ---------------------------------------------------------
-   NORMAL DESCRIPTION LINKS
+   REGULAR DESCRIPTION LINKS
    --------------------------------------------------------- */
 
-.youtube-video-description > p a {
+.youtube-video-description > p a.youtube-regular-link {
+
+    display: inline;
+
+    margin: 0;
+    padding: 0;
+
+    color: #065fd4 !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    text-decoration: none !important;
+}
+
+
+/*
+   AO3 link states — keep timestamps completely clean.
+*/
+
+.youtube-video-description > p a.youtube-regular-link:link,
+.youtube-video-description > p a.youtube-regular-link:visited,
+.youtube-video-description > p a.youtube-regular-link:focus,
+.youtube-video-description > p a.youtube-regular-link:active {
+
+    color: #065fd4 !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+    border-bottom: 0 !important;
+
+    text-decoration: none !important;
+}
+
+.youtube-video-description > p a.youtube-regular-link:hover {
+    text-decoration: underline !important;
+}
+
+
+/* ---------------------------------------------------------
+   SPECIAL YOUTUBE LINKS
+   --------------------------------------------------------- */
+
+.youtube-video-description > p a.youtube-special-link {
 
     display: inline;
 
     margin: 0;
     padding: 0 5px;
+
+    color: #065fd4;
 
     background: #e5e5e5;
 
@@ -827,11 +874,11 @@
    Explicitly reset all of them.
 */
 
-.youtube-video-description > p a:link,
-.youtube-video-description > p a:visited,
-.youtube-video-description > p a:hover,
-.youtube-video-description > p a:focus,
-.youtube-video-description > p a:active {
+.youtube-video-description > p a.youtube-special-link:link,
+.youtube-video-description > p a.youtube-special-link:visited,
+.youtube-video-description > p a.youtube-special-link:hover,
+.youtube-video-description > p a.youtube-special-link:focus,
+.youtube-video-description > p a.youtube-special-link:active {
 
     border: 0 !important;
     border-bottom: 0 !important;
@@ -942,6 +989,15 @@
 
 .youtube-description-content > p a:hover {
     text-decoration: underline !important;
+}
+
+
+/* ---------------------------------------------------------
+   COMMENTS
+   --------------------------------------------------------- */
+
+.youtube-tag {
+    color: #065fd4 !important;
 }
 
 
