@@ -216,13 +216,13 @@ img.youtube-wordmark {
 .emoji-drops {
   left: 8%;
   bottom: 13%;
-  transform: rotate(-12deg);
+  transform: rotate(82deg);
 }
 
 .emoji-search {
-  right: 8%;
-  bottom: 14%;
-  transform: rotate(8deg);
+  right: 29%;
+  bottom: 8%;
+  transform: rotate(-9deg);
 }
 
 .emoji-house {
@@ -232,9 +232,9 @@ img.youtube-wordmark {
 }
 
 .emoji-tomato {
-  right: 29%;
-  bottom: 8%;
-  transform: rotate(-9deg);
+  right: 8%;
+  bottom: 14%;
+  transform: rotate(-12deg);
 }
 
 h1 {
