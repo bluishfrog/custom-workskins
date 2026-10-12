@@ -268,11 +268,11 @@ h1 {
 }
 
 .progress-fill {
-  width: 42%;
+  width: 71.2%;
   height: 100%;
   border-radius: inherit;
   background: var(--youtube-red);
-  animation: upload-progress 6s ease-in-out infinite;
+  animation: upload-progress 7s ease-in-out infinite;
 }
 
 .percentage {
@@ -283,8 +283,8 @@ h1 {
 
 .percentage-number {
   display: inline-block;
-  min-width: 2ch;
-  animation: percentage-cycle 6s steps(1, end) infinite;
+  font-variant-numeric: tabular-nums;
+  animation: percentage-cycle 7s ease-in-out infinite;
 }
 
 .spinner {
@@ -293,7 +293,7 @@ h1 {
   margin: 0 auto 15px;
   border: 5px dotted #a4a7ad;
   border-radius: 50%;
-  animation: spin 1.1s linear infinite;
+  animation: spin 2.71s linear infinite;
 }
 
 .substatus {
@@ -303,16 +303,6 @@ h1 {
 }
 
 /* Animations */
-
-@keyframes upload-progress {
-  0%, 100% { width: 42%; }
-  45% { width: 78%; }
-  72% { width: 61%; }
-}
-
-@keyframes percentage-cycle {
-  0%, 100% { opacity: 1; }
-}
 
 @keyframes spin {
   to { transform: rotate(360deg); }

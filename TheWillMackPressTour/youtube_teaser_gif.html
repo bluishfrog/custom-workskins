@@ -53,12 +53,85 @@
       <div class="progress-track" role="progressbar" aria-label="Upload progress" aria-valuemin="0" aria-valuemax="100">
         <div class="progress-fill"></div>
       </div>
-      <p class="percentage" aria-hidden="true"><span class="percentage-number">71.2</span>%</p>
+
+      <p class="percentage" aria-hidden="true">
+        <span class="percentage-number">71.2</span>%
+      </p>
 
       <div class="spinner" aria-hidden="true"></div>
       <p class="substatus">This may take a few hours.</p>
     </section>
   </main>
+
+  
+<script>
+  const progress = document.querySelector(".progress-fill");
+  const number = document.querySelector(".percentage-number");
+
+  const keyframes = [
+    { time: 0.00, value: 71.2 },
+    { time: 0.25, value: 54.6 },
+    { time: 0.48, value: 27.1 },
+    { time: 0.73, value: 63.8 },
+    { time: 1.00, value: 71.2 }
+  ];
+
+  const duration = 10000; // One full cycle: 10 seconds
+
+  // How long to hold at the significant percentages.
+  const pauses = {
+    0: 700, // 71.2% at the beginning/end
+    2: 900  // 27.1% at the minimum
+  };
+
+  const start = performance.now();
+
+  // Smoothstep easing: slows down at the start and end
+  // of each movement.
+  function ease(t) {
+    return t * t * (3 - 2 * t);
+  }
+
+  function animate(now) {
+    const elapsed = (now - start) % duration;
+    const cycle = elapsed / duration;
+
+    let i = 0;
+
+    while (
+      i < keyframes.length - 2 &&
+      cycle >= keyframes[i + 1].time
+    ) {
+      i++;
+    }
+
+    const a = keyframes[i];
+    const b = keyframes[i + 1];
+
+    const segmentDuration = (b.time - a.time) * duration;
+    const segmentElapsed = (cycle - a.time) * duration;
+
+    // Pause at the important endpoints.
+    const pause = pauses[i] || 0;
+    const movementDuration = segmentDuration - pause;
+    const movingElapsed = Math.max(0, segmentElapsed - pause);
+
+    // Hold at the starting value, then animate toward the next.
+    const t = Math.min(1, movingElapsed / movementDuration);
+    const eased = ease(t);
+
+    const value = a.value + (b.value - a.value) * eased;
+
+    progress.style.width = value + "%";
+    number.textContent = value.toFixed(1);
+
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+</script>
+
+
 </body>
 
 </html>
