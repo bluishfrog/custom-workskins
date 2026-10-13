@@ -4,11 +4,11 @@ from moviepy import VideoFileClip
 
 # -------- SETTINGS --------
 INPUT_FILE = "teaser2.mov"
-OUTPUT_FILE = "teaser2.gif"
+OUTPUT_FILE = "TheWillMackPressTour_Teaser.gif"
 
 FPS = 12            # Frames per second
-WIDTH = 1322
-HEIGHT = 1660         
+WIDTH = 661
+HEIGHT = 830        
 START_TIME = 0       # Start time in seconds
 END_TIME = None      # End time in seconds; None means the end
 # --------------------------
