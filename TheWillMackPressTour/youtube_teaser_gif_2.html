@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Upload Teaser</title>
+  <link rel="stylesheet" href="youtube_teaser_gif_2.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="youtube-logo">
+      <span class="youtube-icon">
+        <span class="play-icon"></span>
+      </span>
+      <span class="youtube-word">YouTube</span>
+    </div>
+    <div class="upload-label">VIDEO UPLOAD</div>
+  </header>
+
+  <main class="upload-page">
+    <section class="upload-card">
+
+      <!-- Video thumbnail -->
+      <div class="thumbnail">
+        <img
+          src="https://YOUR-THUMBNAIL-IMAGE-URL-HERE"
+          alt="Video thumbnail"
+        >
+        <div class="thumbnail-overlay">
+          <span>NEW VIDEO</span>
+        </div>
+        <div class="thumbnail-play">
+          <span class="play-icon"></span>
+        </div>
+      </div>
+
+      <!-- Video title and status -->
+      <h1 class="video-title">Your video title goes here</h1>
+      <p class="upload-status">Uploading video<span class="ellipsis"></span></p>
+
+      <!-- Upload progress -->
+      <div class="progress-track">
+        <div class="progress-fill"></div>
+      </div>
+
+      <div class="progress-info">
+        <span class="progress-label">Uploading</span>
+        <span class="percentage-number">71.2</span><span class="percent-sign">%</span>
+      </div>
+
+      <!-- Creator lineup -->
+      <section class="creators" aria-label="Video creators">
+        <p class="creators-heading">CREATED BY</p>
+
+        <div class="creator-list">
+          <div class="creator" data-index="0">
+            <div class="creator-avatar">
+              <img src="https://YOUR-CREATOR-1-IMAGE-URL-HERE" alt="Creator One">
+            </div>
+          </div>
+
+          <div class="creator" data-index="1">
+            <div class="creator-avatar">
+              <img src="https://YOUR-CREATOR-2-IMAGE-URL-HERE" alt="Creator Two">
+            </div>
+          </div>
+
+          <div class="creator" data-index="2">
+            <div class="creator-avatar">
+              <img src="https://YOUR-CREATOR-3-IMAGE-URL-HERE" alt="Creator Three">
+            </div>
+          </div>
+
+          <div class="creator" data-index="3">
+            <div class="creator-avatar">
+              <img src="https://YOUR-CREATOR-4-IMAGE-URL-HERE" alt="Creator Four">
+            </div>
+          </div>
+
+          <div class="creator" data-index="4">
+            <div class="creator-avatar">
+              <img src="https://YOUR-CREATOR-5-IMAGE-URL-HERE" alt="Creator Five">
+            </div>
+          </div>
+
+          <div class="creator" data-index="5">
+            <div class="creator-avatar">
+              <img src="https://YOUR-CREATOR-6-IMAGE-URL-HERE" alt="Creator Six">
+            </div>
+          </div>
+        </div>
+
+        <div class="creator-caption" aria-live="off">
+          <span class="creator-name">Creator One</span>
+          <span class="creator-counter">CREATOR 01 / 06</span>
+        </div>
+
+        <div class="creator-indicators" aria-hidden="true">
+          <span class="creator-dot active"></span>
+          <span class="creator-dot"></span>
+          <span class="creator-dot"></span>
+          <span class="creator-dot"></span>
+          <span class="creator-dot"></span>
+          <span class="creator-dot"></span>
+        </div>
+      </section>
+
+      <!-- Spinner and footer status -->
+      <div class="spinner" aria-hidden="true"></div>
+      <p class="substatus">This may take a few hours.</p>
+
+    </section>
+  </main>
+
+  <script>
+    // Upload progress animation
+    const progress = document.querySelector(".progress-fill");
+    const number = document.querySelector(".percentage-number");
+
+    const keyframes = [
+      { time: 0.00, value: 71.2 },
+      { time: 0.25, value: 54.6 },
+      { time: 0.48, value: 27.1 },
+      { time: 0.73, value: 63.8 },
+      { time: 1.00, value: 71.2 }
+    ];
+
+    const duration = 10000;
+    const pauses = {
+      0: 700,
+      2: 900
+    };
+
+    const start = performance.now();
+
+    function ease(t) {
+      return t * t * (3 - 2 * t);
+    }
+
+    function animateProgress(now) {
+      const elapsed = (now - start) % duration;
+      const cycle = elapsed / duration;
+
+      let i = 0;
+      while (
+        i < keyframes.length - 2 &&
+        cycle >= keyframes[i + 1].time
+      ) {
+        i++;
+      }
+
+      const a = keyframes[i];
+      const b = keyframes[i + 1];
+
+      const segmentDuration = (b.time - a.time) * duration;
+      const segmentElapsed = (cycle - a.time) * duration;
+      const pause = pauses[i] || 0;
+      const movementDuration = segmentDuration - pause;
+      const movingElapsed = Math.max(0, segmentElapsed - pause);
+      const t = Math.min(1, movingElapsed / movementDuration);
+      const value = a.value + (b.value - a.value) * ease(t);
+
+      progress.style.width = value + "%";
+      number.textContent = value.toFixed(1);
+
+      requestAnimationFrame(animateProgress);
+    }
+
+    requestAnimationFrame(animateProgress);
+
+    // Creator lineup animation
+    const creatorNames = [
+      "Creator One",
+      "Creator Two",
+      "Creator Three",
+      "Creator Four",
+      "Creator Five",
+      "Creator Six"
+    ];
+
+    const creators = [...document.querySelectorAll(".creator")];
+    const dots = [...document.querySelectorAll(".creator-dot")];
+    const creatorName = document.querySelector(".creator-name");
+    const creatorCounter = document.querySelector(".creator-counter");
+
+    let currentCreator = 0;
+
+    function showCreator(index) {
+      creators.forEach((creator, i) => {
+        creator.classList.toggle("active", i === index);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+
+      creatorName.classList.remove("name-visible");
+
+      // Restart the name transition cleanly
+      void creatorName.offsetWidth;
+
+      creatorName.textContent = creatorNames[index];
+      creatorCounter.textContent =
+        `CREATOR ${String(index + 1).padStart(2, "0")} / 06`;
+
+      creatorName.classList.add("name-visible");
+    }
+
+    showCreator(0);
+
+    // 600 ms per creator: 3.6 seconds for a complete lineup
+    setInterval(() => {
+      currentCreator = (currentCreator + 1) % creators.length;
+      showCreator(currentCreator);
+    }, 600);
+  </script>
+</body>
+</html>

@@ -3,12 +3,12 @@ from pathlib import Path
 from moviepy import VideoFileClip
 
 # -------- SETTINGS --------
-INPUT_FILE = "teaser.mov"
-OUTPUT_FILE = "teaser.gif"
+INPUT_FILE = "teaser2.mov"
+OUTPUT_FILE = "teaser2.gif"
 
 FPS = 12            # Frames per second
-WIDTH = 2026
-HEIGHT = 1334         
+WIDTH = 1322
+HEIGHT = 1660         
 START_TIME = 0       # Start time in seconds
 END_TIME = None      # End time in seconds; None means the end
 # --------------------------

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload — Dark Edition</title>
+    <link rel="stylesheet" href="youtube_teaser_gif_3.css">
+</head>
+
+<body>
+    <main class="page">
+        <section class="upload-card">
+
+            <!-- Header -->
+            <header class="card-header">
+                <div class="brand">
+                    <span class="youtube-icon">
+                        <span class="play-icon"></span>
+                    </span>
+                    <span class="brand-name">YouTube</span>
+                </div>
+                <div class="header-status">
+                    <span class="upload-label">CONVERTING TO AO3 FORMAT</span>
+                    <div class="spinner" aria-hidden="true"></div>
+                </div>
+            </header>
+
+            <!-- Vintage film strip -->
+            <div class="thumbnail film-thumbnail">
+                <div class="filmstrip-window">
+                    <div class="filmstrip">
+
+                        <div class="film-rail film-rail-left"></div>
+                        <div class="film-rail film-rail-right"></div>
+
+                        <div class="film-frame">🐔</div>
+                        <div class="film-frame">🐶</div>
+                        <div class="film-frame">💦</div>
+                        <div class="film-frame">🔎</div>
+                        <div class="film-frame">🏠</div>
+                        <div class="film-frame">🍅</div>
+
+                        <!-- Duplicate sequence for seamless looping -->
+                        <div class="film-frame">🐔</div>
+                        <div class="film-frame">🐶</div>
+                        <div class="film-frame">💦</div>
+                        <div class="film-frame">🔎</div>
+                        <div class="film-frame">🏠</div>
+                        <div class="film-frame">🍅</div>
+
+                    </div>
+                </div>
+                <div class="thumbnail-shade"></div>
+            </div>
+
+            <!-- Video information -->
+            <h1 class="video-title">Playlist has been created.</h1>
+            <p class="upload-status">
+                Uploading your videos<span class="ellipsis"></span>
+            </p>
+
+            <!-- Progress bar -->
+            <div class="progress-track">
+                <div class="progress-fill"></div>
+            </div>
+
+            <div class="progress-info">
+                <span class="progress-caption">Processing your videos</span>
+                <span>
+                    <span class="percentage-number">71.2</span><span class="percent-sign">%</span>
+                </span>
+            </div>
+
+            <!-- Creator lineup -->
+            <section class="creators" aria-label="Video creators">
+                <p class="creators-heading">CREATED BY</p>
+
+                <div class="creator-list">
+                    <div class="creator active" data-index="0">
+                        <div class="creator-avatar">
+                            <img src="https://bluishfrog.github.io/hosted/TheWillMackPressTour/pb_lily.jpg"
+                                alt="Creator One">
+                        </div>
+                    </div>
+
+                    <div class="creator" data-index="1">
+                        <div class="creator-avatar">
+                            <img src="https://bluishfrog.github.io/hosted/TheWillMackPressTour/pb_nic.jpg"
+                                alt="Creator Two">
+                        </div>
+                    </div>
+
+                    <div class="creator" data-index="2">
+                        <div class="creator-avatar">
+                            <img src="https://bluishfrog.github.io/hosted/TheWillMackPressTour/pb_honelle.jpg"
+                                alt="Creator Three">
+                        </div>
+                    </div>
+
+                    <div class="creator" data-index="3">
+                        <div class="creator-avatar">
+                            <img src="https://bluishfrog.github.io/hosted/TheWillMackPressTour/pb_extra.jpg"
+                                alt="Creator Four">
+                        </div>
+                    </div>
+
+                    <div class="creator" data-index="4">
+                        <div class="creator-avatar">
+                            <img src="https://bluishfrog.github.io/hosted/TheWillMackPressTour/pb_blu.jpg"
+                                alt="Creator Five">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="creator-caption">
+                    <span class="creator-name">Creator One</span>
+                    <span class="creator-counter">CREATOR 01 / 05</span>
+                </div>
+
+                <div class="creator-indicators" aria-hidden="true">
+                    <span class="creator-dot active"></span>
+                    <span class="creator-dot"></span>
+                    <span class="creator-dot"></span>
+                    <span class="creator-dot"></span>
+                    <span class="creator-dot"></span>
+                </div>
+
+            </section>
+
+        </section>
+    </main>
+
+    <script>
+        // Upload progress animation
+        const progress = document.querySelector(".progress-fill");
+        const number = document.querySelector(".percentage-number");
+
+        const keyframes = [
+            { time: 0.00, value: 71.2 },
+            { time: 0.25, value: 54.6 },
+            { time: 0.48, value: 27.1 },
+            { time: 0.73, value: 63.8 },
+            { time: 1.00, value: 71.2 }
+        ];
+
+        const duration = 10000;
+        const pauses = {
+            0: 700,
+            2: 900
+        };
+
+        const start = performance.now();
+
+        function ease(t) {
+            return t * t * (3 - 2 * t);
+        }
+
+        function animateProgress(now) {
+            const elapsed = (now - start) % duration;
+            const cycle = elapsed / duration;
+
+            let i = 0;
+            while (
+                i < keyframes.length - 2 &&
+                cycle >= keyframes[i + 1].time
+            ) {
+                i++;
+            }
+
+            const a = keyframes[i];
+            const b = keyframes[i + 1];
+
+            const segmentDuration = (b.time - a.time) * duration;
+            const segmentElapsed = (cycle - a.time) * duration;
+            const pause = pauses[i] || 0;
+            const movementDuration = segmentDuration - pause;
+            const movingElapsed = Math.max(0, segmentElapsed - pause);
+            const t = Math.min(1, movingElapsed / movementDuration);
+            const value = a.value + (b.value - a.value) * ease(t);
+
+            progress.style.width = value + "%";
+            number.textContent = value.toFixed(1);
+
+            requestAnimationFrame(animateProgress);
+        }
+
+        requestAnimationFrame(animateProgress);
+
+        // Creator names — replace these with your real names
+        const creatorNames = [
+            "lilliesinwater13",
+            "orbiter-wsh",
+            "honelle56",
+            "extrasteps",
+            "bluishfrog"
+        ];
+
+        const creators = [...document.querySelectorAll(".creator")];
+        const dots = [...document.querySelectorAll(".creator-dot")];
+        const creatorName = document.querySelector(".creator-name");
+        const creatorCounter = document.querySelector(".creator-counter");
+
+        let currentCreator = 0;
+
+        function showCreator(index) {
+            creators.forEach((creator, i) => {
+                creator.classList.toggle("active", i === index);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
+
+            creatorName.classList.remove("name-visible");
+            void creatorName.offsetWidth;
+
+            creatorName.textContent = creatorNames[index];
+            creatorCounter.textContent =
+                `CREATOR ${String(index + 1).padStart(2, "0")} / 05`;
+
+            creatorName.classList.add("name-visible");
+        }
+
+        showCreator(0);
+
+        // 600 ms per creator; full cycle = 3.6 seconds
+        setInterval(() => {
+            currentCreator = (currentCreator + 1) % creators.length;
+            showCreator(currentCreator);
+        }, 2000);
+    </script>
+</body>
+
+</html>

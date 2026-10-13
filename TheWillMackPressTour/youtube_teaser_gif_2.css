@@ -1,0 +1,510 @@
+:root {
+  --youtube-red: #ff0033;
+  --background: #ffffff;
+  --text: #202124;
+  --muted: #777777;
+  --soft-gray: #eeeeee;
+  --dark-gray: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------------------------
+   TOP BAR
+------------------------- */
+
+.top-bar {
+  height: 66px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.youtube-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.youtube-icon {
+  width: 35px;
+  height: 25px;
+  border-radius: 7px;
+  background: var(--youtube-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid white;
+  margin-left: 3px;
+}
+
+.youtube-word {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.upload-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #888888;
+}
+
+/* -------------------------
+   MAIN LAYOUT
+------------------------- */
+
+.upload-page {
+  min-height: calc(100vh - 66px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 36px 22px 28px;
+}
+
+.upload-card {
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+}
+
+/* -------------------------
+   VIDEO THUMBNAIL
+------------------------- */
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #eeeeee;
+  margin-bottom: 23px;
+  animation: gentle-pulse 3.2s ease-in-out infinite;
+}
+
+.thumbnail > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  background: var(--youtube-red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.thumbnail-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 58px;
+  height: 42px;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background: var(--youtube-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px #00000030;
+}
+
+/* -------------------------
+   VIDEO TITLE AND STATUS
+------------------------- */
+
+.video-title {
+  margin: 0 0 9px;
+  font-size: clamp(21px, 4vw, 29px);
+  line-height: 1.25;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.upload-status {
+  margin: 0 0 19px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.ellipsis::after {
+  content: "";
+  animation: ellipsis 1.2s steps(4, end) infinite;
+}
+
+@keyframes ellipsis {
+  0%   { content: ""; }
+  25%  { content: "."; }
+  50%  { content: ".."; }
+  75%  { content: "..."; }
+  100% { content: ""; }
+}
+
+/* -------------------------
+   PROGRESS BAR
+------------------------- */
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--soft-gray);
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 71.2%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--youtube-red);
+  box-shadow: 0 0 10px #ff003326;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-top: 8px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-label {
+  color: var(--muted);
+  margin-right: auto;
+}
+
+.percentage-number {
+  font-weight: 700;
+  color: var(--dark-gray);
+}
+
+.percent-sign {
+  color: var(--dark-gray);
+  margin-left: 2px;
+}
+
+/* -------------------------
+   CREATOR LINEUP
+------------------------- */
+
+.creators {
+  margin: 26px 0 19px;
+  padding: 17px 14px 15px;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.creators-heading {
+  margin: 0 0 16px;
+  color: #888888;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+/* All six avatars stay visible */
+
+.creator-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 3.2vw, 22px);
+}
+
+.creator {
+  position: relative;
+  flex: 0 1 62px;
+  width: 62px;
+  max-width: 62px;
+  min-width: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+  opacity: 0.58;
+  transform: scale(0.91);
+}
+
+/* Circular image and red outline */
+
+.creator-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e2e2e2;
+  background: #f1f1f1;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.creator-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The active creator */
+
+.creator.active {
+  opacity: 1;
+  transform: scale(1.08);
+  z-index: 1;
+}
+
+.creator.active .creator-avatar {
+  border-color: var(--youtube-red);
+  box-shadow:
+    0 0 0 3px #ff00331c,
+    0 0 17px #ff003344;
+}
+
+/* Small accent beneath each avatar */
+
+.creator::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  background: var(--youtube-red);
+  transition: width 0.25s ease;
+}
+
+.creator.active::after {
+  width: 20px;
+}
+
+/* Name and counter */
+
+.creator-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-height: 48px;
+  margin-top: 19px;
+}
+
+.creator-name {
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -0.2px;
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+.creator-name.name-visible {
+  animation: name-appear 0.3s ease forwards;
+}
+
+.creator-counter {
+  color: #999999;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes name-appear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Six small progress dots */
+
+.creator-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 3px;
+}
+
+.creator-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #dedede;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.creator-dot.active {
+  width: 17px;
+  border-radius: 5px;
+  background: var(--youtube-red);
+}
+
+/* -------------------------
+   SPINNER AND FOOTER
+------------------------- */
+
+.spinner {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  border: 4px dotted #dedede;
+  border-top-color: var(--youtube-red);
+  animation: spin 2.71s linear infinite;
+}
+
+.substatus {
+  margin: 0;
+  color: #888888;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* -------------------------
+   ANIMATIONS
+------------------------- */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.008);
+  }
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 480px) {
+  .top-bar {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .youtube-word {
+    font-size: 18px;
+  }
+
+  .youtube-icon {
+    width: 30px;
+    height: 22px;
+  }
+
+  .upload-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .upload-page {
+    min-height: calc(100vh - 56px);
+    padding: 27px 15px 22px;
+  }
+
+  .thumbnail {
+    border-radius: 9px;
+    margin-bottom: 18px;
+  }
+
+  .thumbnail-play {
+    width: 48px;
+    height: 35px;
+  }
+
+  .creators {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-top: 22px;
+  }
+
+  .creator-list {
+    gap: clamp(7px, 2.6vw, 12px);
+  }
+
+  .creator {
+    flex-basis: 48px;
+    max-width: 48px;
+  }
+
+  .creator-name {
+    font-size: 15px;
+  }
+
+  .substatus {
+    font-size: 13px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .thumbnail,
+  .spinner {
+    animation: none;
+  }
+
+  .creator,
+  .creator-avatar,
+  .creator::after,
+  .creator-dot {
+    transition: none;
+  }
+
+  .creator-name.name-visible {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
