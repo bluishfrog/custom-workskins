@@ -1,0 +1,398 @@
+
+/**************************************************
+*   wrapper
+**************************************************/
+
+.grindr {
+  width: 100%;
+  max-width: 330px;
+  font-family: "Helvetica Neue", Helvetica, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.3;
+  display: table;
+  margin: 2em auto;
+  padding: 0;
+  background: #202020;
+  color: #eeeeee;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Everything takes on the font */
+
+.grindr * {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.grindr dd {
+  margin: 0;
+}
+
+
+/**************************************************
+*   border
+**************************************************/
+
+.grindr.border {
+  border: 1px solid #353535;
+}
+
+
+/**************************************************
+*   header
+**************************************************/
+
+.grindr .grindr-header {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  min-height: 4.2em;
+  padding: 0.55em 0.65em;
+  background: #242424;
+  border-bottom: 1px solid #303030;
+}
+
+/* Header columns */
+
+.grindr .grindr-back,
+.grindr .grindr-profile-pic,
+.grindr .grindr-contact,
+.grindr .grindr-actions {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Back icon */
+
+.grindr .grindr-back {
+  display: table-cell;
+  width: 2em;
+  text-align: left;
+  padding-right: 0.35em;
+  vertical-align: middle;
+}
+
+.grindr .grindr-back-arrow {
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.2em;
+  border-left: 2px solid #aaaaaa;
+  border-bottom: 2px solid #aaaaaa;
+  transform: rotate(45deg);
+}
+
+.grindr .grindr-back-arrow::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 2px;
+  background: #aaaaaa;
+  left: -1px;
+  bottom: -2px;
+  transform: rotate(-45deg);
+  transform-origin: left center;
+}
+
+/* Profile picture */
+
+.grindr .grindr-profile-pic {
+  width: 2.75em;
+  padding-right: 0.55em;
+}
+
+.grindr .grindr-profile-pic img {
+  display: block;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 0.3em;
+}
+
+/* Name and distance */
+
+.grindr .grindr-contact {
+  width: auto;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.grindr .grindr-name {
+  margin: 0 0 0.2em;
+  color: #f5f5f5;
+  font-size: 0.9em;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.grindr .grindr-distance {
+  color: #aaaaaa;
+  font-size: 0.78em;
+  line-height: 1.2;
+}
+
+/* Video and menu icons */
+
+.grindr .grindr-actions {
+  display: table-cell;
+  width: 4.4em;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.grindr .grindr-video {
+  display: inline-block;
+  width: 1.8em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.grindr .grindr-video img {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  margin: auto;
+}
+
+/* Three vertical dots */
+
+.grindr .grindr-menu {
+  display: inline-block;
+  width: 1.1em;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  text-align: center;
+  white-space: normal;
+}
+
+.grindr .grindr-menu span {
+  display: block;
+  width: 0.22em;
+  height: 0.22em;
+  margin: 0.16em auto;
+  border-radius: 50%;
+  background: #eeeeee;
+}
+
+
+/**************************************************
+*   conversation area
+**************************************************/
+
+.grindr .grindr-messages {
+  display: block;
+  width: 100%;
+  padding: 1.1em 0 0.15em;
+  background: #202020;
+  overflow: hidden;
+}
+
+/* Today / date divider */
+
+.grindr .grindr-day {
+  display: block;
+  margin: 0 0 1.5em;
+  padding: 0;
+  color: #aaaaaa;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
+}
+
+
+/**************************************************
+*   messages
+**************************************************/
+
+/* Shared message container */
+
+.grindr .grindr-message {
+  display: block;
+  clear: both;
+  margin: 0 0 0.5em;
+  padding: 0 0.65em;
+  overflow: hidden;
+}
+
+/* Shared bubble styling */
+
+.grindr .grindr-message dd {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  max-width: 85%;
+  padding: 0.55em 0.8em;
+  border-radius: 0.35em;
+  font-size: 0.95em;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  margin-bottom: 0.2em;
+}
+
+/* Incoming messages */
+
+.grindr .grindr-message.in {
+  text-align: left;
+}
+
+.grindr .grindr-message.in dd {
+  float: left;
+  clear: both;
+  background: #72c0dc;
+  color: #263b49;
+  border-bottom-left-radius: 0;
+}
+
+/* Outgoing messages */
+
+.grindr .grindr-message.out {
+  text-align: right;
+}
+
+.grindr .grindr-message.out dd {
+  float: right;
+  clear: both;
+  background: #ffb914;
+  color: #55401b;
+  border-bottom-right-radius: 0;
+}
+
+
+/**************************************************
+*   message tails
+**************************************************/
+
+.grindr .grindr-message dd:last-of-type::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
+
+/* Incoming tail */
+
+.grindr .grindr-message.in dd:last-of-type::after {
+  left: -0.5em;
+  border-right: 0.55em solid #72c0dc;
+  border-top: 0.75em solid transparent;
+  border-bottom: none;
+}
+
+/* Outgoing tail */
+
+.grindr .grindr-message.out dd:last-of-type::after {
+  right: -0.5em;
+  border-left: 0.55em solid #ffb914;
+  border-top: 0.75em solid transparent;
+  border-bottom: none;
+}
+
+
+/**************************************************
+*   timestamps
+**************************************************/
+
+.grindr .grindr-message time {
+  display: block;
+  clear: both;
+  padding-top: 0.4em;
+  color: #aaaaaa;
+  font-size: 0.75em;
+  line-height: 1.3;
+  font-weight: normal;
+}
+
+.grindr .grindr-message.in time {
+  text-align: left;
+}
+
+.grindr .grindr-message.out time {
+  text-align: right;
+}
+
+
+/**************************************************
+*   input bar
+**************************************************/
+
+.grindr .grindr-input {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  min-height: 3.6em;
+  padding: 0.55em 0.6em;
+  background: #292929;
+  border-top: 1px solid #353535;
+  color: #aaaaaa;
+}
+
+/* Icon columns */
+
+.grindr .grindr-input-video,
+.grindr .grindr-input-mic {
+  display: table-cell;
+  width: 2.4em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.grindr .grindr-input-video img {
+  display: block;
+  width: 1.7em;
+  height: 1.6em;
+  margin: auto;
+}
+
+.grindr .grindr-input-mic img {
+  display: block;
+  width: 1.35em;
+  height: 1.7em;
+  margin: auto;
+}
+
+/* Placeholder */
+
+.grindr .grindr-placeholder {
+  display: table-cell;
+  width: auto;
+  vertical-align: middle;
+  padding: 0 0.55em;
+  color: #aaaaaa;
+  font-size: 0.9em;
+  overflow-wrap: break-word;
+}
+
+
+/**************************************************
+*   bottom toolbar
+**************************************************/
+
+.grindr .grindr-toolbar {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  min-height: 3.6em;
+  padding: 0.55em 0.3em;
+  background: #292929;
+  border-top: 1px solid #252525;
+}
+
+.grindr .grindr-toolbar-item {
+  display: table-cell;
+  width: 20%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.grindr .grindr-toolbar-item img {
+  display: block;
+  width: 1.55em;
+  height: 1.55em;
+  margin: auto;
+}
